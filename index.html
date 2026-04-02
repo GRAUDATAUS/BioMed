@@ -122,106 +122,63 @@ function toggleProblems(){
 <!-- <!-- ============================================================ -->
 <!-- HERO SECTION (REPLACEMENT) -->
 <!-- ============================================================ -->
-<section class="relative min-h-screen flex items-center px-4 py-24 pt-32 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden">
-
-  <!-- Ambient glows -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-600 rounded-full blur-[140px] opacity-20 glow-pulse"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-600 rounded-full blur-[120px] opacity-20 glow-pulse-delayed"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500 rounded-full blur-[160px] opacity-10"></div>
+<<!-- HERO -->
+<section style="position:relative;display:flex;align-items:center;padding:96px 16px;overflow:hidden;background:linear-gradient(135deg,#0f172a,#1e3a5f,#0f172a);">
+  <div style="position:absolute;inset:0;pointer-events:none;">
+    <div style="position:absolute;top:0;left:0;width:600px;height:600px;background:#2563eb;border-radius:50%;filter:blur(140px);opacity:0.2;"></div>
+    <div style="position:absolute;bottom:0;right:0;width:500px;height:500px;background:#9333ea;border-radius:50%;filter:blur(120px);opacity:0.2;"></div>
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:#06b6d4;border-radius:50%;filter:blur(160px);opacity:0.1;"></div>
   </div>
+  <div style="max-width:1152px;margin:0 auto;position:relative;z-index:10;text-align:center;width:100%;">
 
-  <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+    <!-- Product name -->
+    <p style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);color:#fff;font-weight:400;margin-bottom:8px;letter-spacing:0.02em;">BioMed Advisor</p>
 
-  <div class="max-w-6xl mx-auto relative z-10 text-center">
-
-    <!-- Badge -->
-    <div class="reveal inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/40 rounded-full px-5 py-2 mb-8">
-      <svg class="w-4 h-4 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-      </svg>
-      <span class="text-blue-300 text-sm font-semibold tracking-wide uppercase">Research-Grade AI for Grant Proposals</span>
-    </div>
+    <!-- Tagline -->
+    <p style="font-size:15px;color:#34d399;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:32px;">AI Built for Biomedical Research &amp; Funding</p>
 
     <!-- Headline -->
-    <h1 class="text-5xl md:text-7xl text-white mb-6 leading-tight">
-      Win More Grants<br />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-        with Better AI
-      </span>
+    <h1 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(3rem,5vw,4.5rem);color:#fff;margin-bottom:24px;line-height:1.1;">
+      Win More Grants<br/>
+      <span style="background:linear-gradient(90deg,#60a5fa,#22d3ee,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:textShimmer 6s ease-in-out infinite;">with Better AI</span>
     </h1>
 
     <!-- Subhead -->
-    <p class="text-xl md:text-2xl text-blue-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light">
-      BioMed Advisor is purpose-built for biomedical grant proposals with validated citations,
-      agency-aligned outputs, and institutional IP protection generic AI cannot provide.
+    <p style="font-size:clamp(1.1rem,2vw,1.4rem);color:#bfdbfe;max-width:768px;margin:0 auto 40px;line-height:1.7;font-weight:300;">
+      Verifiable citations. Agency-aligned proposals. Institutional-grade IP protection.<br/>
+      The only AI built exclusively for biomedical grant success.
     </p>
 
-    <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-      <button
-        id="hero-free-trial-btn"
-        onclick="openModal()"
-        class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-2xl shadow-emerald-500/40 transition-all hover:-translate-y-0.5"
-      >
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
-        </svg>
-        Start Free Research Account
+    <!-- Buttons -->
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:32px;">
+      <button id="hero-free-trial-btn" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:18px;padding:16px 40px;border-radius:12px;background:#10b981;box-shadow:0 20px 40px rgba(16,185,129,0.4);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">
+        &#9654; Start Free Research Account
       </button>
-
-      <a
-        href="https://tidycal.com/graudata/30-minute-meeting-1dleel9"
-        target="_blank"
-        class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-lg px-10 py-4 rounded-xl border border-white/20 transition-all hover:-translate-y-0.5"
-      >
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-        </svg>
-        Schedule a Demo
+      <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:18px;padding:16px 40px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.25);text-decoration:none;backdrop-filter:blur(8px);transition:transform 0.2s ease,box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 24px rgba(255,255,255,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        &#128197; Schedule a Demo
       </a>
     </div>
 
-    <!-- Trust signals -->
-    <div class="flex flex-wrap justify-center gap-6 text-sm text-blue-300 mb-12">
-      <span class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        No credit card required
-      </span>
-
-      <span class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-        </svg>
-        IP-safe by design
-      </span>
-
-      <span class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-        Research-grade output
-      </span>
+    <!-- Trust checkmarks -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;font-size:14px;color:#93c5fd;margin-bottom:40px;">
+      <span>&#10003; No credit card required</span>
+      <span>&#10003; IP-safe by design</span>
+      <span>&#10003; Instant access</span>
     </div>
 
-    <!-- Supporting proof strip -->
-    <div class="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <div class="bg-white/10 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur-sm">
-        <p class="text-3xl font-bold text-white mb-1">Validated</p>
-        <p class="text-blue-200 text-sm">Citations and evidence transparency for proposal development</p>
+    <!-- Social proof trust row -->
+    <div style="max-width:672px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;">
+      <p style="color:rgba(147,197,253,0.7);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">Trusted by researchers at</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:32px;font-size:14px;color:rgba(191,219,254,0.6);font-weight:500;">
+        <span>UT Austin</span>
+        <span>&middot;</span>
+        <span>University Hospital W&uuml;rzburg</span>
+        <span>&middot;</span>
+        <span>Bio Deutschland</span>
+        <span>&middot;</span>
+        <span>Bio-M Munich</span>
       </div>
-
-      <div class="bg-white/10 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur-sm">
-        <p class="text-3xl font-bold text-white mb-1">Aligned</p>
-        <p class="text-blue-200 text-sm">Outputs designed for biomedical research and funding workflows</p>
-      </div>
-
-      <div class="bg-white/10 border border-white/10 rounded-2xl px-6 py-5 backdrop-blur-sm">
-        <p class="text-3xl font-bold text-white mb-1">Protected</p>
-        <p class="text-blue-200 text-sm">Institutional control, private deployment models, and stronger IP safeguards</p>
-      </div>
+      <p style="color:rgba(147,197,253,0.5);font-size:14px;font-style:italic;margin-top:16px;max-width:512px;margin-left:auto;margin-right:auto;">&ldquo;Clearly far better than ChatGPT alone, with clear chain-of-thought transparency.&rdquo; &mdash; Dr. Oliver Schacht</p>
     </div>
 
   </div>

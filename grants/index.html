@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Win More Grants with Better AI — BioMed Advisor</title>
+<meta name="description" content="Verifiable citations. Agency-aligned proposals. Institutional-grade IP protection. The only AI built exclusively for biomedical grant success. A product of GRAU DATA LLC."/>
+<meta property="og:title" content="Win More Grants with Better AI — BioMed Advisor"/>
+<meta property="og:description" content="The only AI built exclusively for biomedical grant success."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://biomedadvisor.com/grants"/>
+<link rel="stylesheet" href="/styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*{font-family:'DM Sans',sans-serif;box-sizing:border-box;margin:0;padding:0;}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;}
+body{overflow-x:hidden;background:white;}
+.serif{font-family:'DM Serif Display',serif;}
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.animate{opacity:0;transform:translateY(40px);}
+.reveal.animate.visible{opacity:1;transform:translateY(0);}
+.reveal-left.animate{opacity:0;transform:translateX(-40px);}
+.reveal-left.animate.visible{opacity:1;transform:translateX(0);}
+.reveal-right.animate{opacity:0;transform:translateX(40px);}
+.reveal-right.animate.visible{opacity:1;transform:translateX(0);}
+.reveal-scale.animate{opacity:0;transform:scale(0.92);}
+.reveal-scale.animate.visible{opacity:1;transform:scale(1);}
+.delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+@keyframes glowPulse{0%,100%{opacity:0.2;}50%{opacity:0.4;}}
+.glow-pulse{animation:glowPulse 4s ease-in-out infinite;}
+.glow-pulse-delayed{animation:glowPulse 4s ease-in-out infinite 1s;}
+@keyframes alertPulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.4);}50%{box-shadow:0 0 0 8px rgba(239,68,68,0);}}
+.alert-pulse{animation:alertPulse 2s ease-in-out infinite;}
+@keyframes textShimmer{0%,100%{background-position:0% center;}50%{background-position:200% center;}}
+.stat-card{transition:transform 0.2s ease,box-shadow 0.2s ease;}
+.stat-card:hover{transform:translateY(-4px);}
+.problem-card{transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;}
+.problem-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(0,0,0,0.15);}
+.feature-card{transition:box-shadow 0.3s ease,border-color 0.3s ease;}
+.feature-card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,0.12);}
+.testimonial-card{transition:box-shadow 0.3s ease;}
+.testimonial-card:hover{box-shadow:0 20px 40px -8px rgba(0,0,0,0.1);}
+.grid-bg{background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='white' stroke-width='0.5' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");}
+.stripe-bg{background-image:repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(255,255,255,.05) 35px,rgba(255,255,255,.05) 70px);}
+.nav-link{transition:color 0.15s;}
+.nav-link:hover{color:#fff;}
+.mobile-menu{display:none;}
+.mobile-menu.open{display:flex;}
+@media(max-width:767px){.desktop-nav{display:none;}.mobile-toggle{display:flex;}}
+@media(min-width:768px){.mobile-toggle{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="bma-nav" class="sticky top-0 z-50 backdrop-blur-md border-b border-white/5 transition-shadow duration-200" style="background:rgba(10,13,26,0.95);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center no-underline">
+      <img src="/assets/bma-logo.png" alt="BioMed Advisor" style="height:36px;width:auto;display:block;"/>
+    </a>
+    <div class="desktop-nav hidden md:flex items-center gap-7">
+      <a href="/grants" class="nav-link text-sm font-semibold text-white no-underline">Grants</a>
+      <a href="/data-sovereignty" class="nav-link text-sm font-medium text-white/70 no-underline">Data Sovereignty</a>
+      <span class="w-px h-4 bg-white/15"></span>
+      <a href="https://us.graudata.com" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-white/70 no-underline inline-flex items-center gap-1">
+        GRAU DATA
+        <svg class="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+      <button onclick="openAccountModal()" class="text-sm font-semibold text-white px-5 py-2 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
+    </div>
+    <button class="mobile-toggle md:hidden text-white" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="mobile-menu md:hidden flex-col gap-1 px-6 pb-4" style="background:rgba(10,13,26,0.98);">
+    <a href="/grants" class="text-base font-semibold text-white py-3 no-underline border-b border-white/5">Grants</a>
+    <a href="/data-sovereignty" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5">Data Sovereignty</a>
+    <a href="https://us.graudata.com" target="_blank" rel="noopener" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5 inline-flex items-center gap-1">
+      GRAU DATA
+      <svg class="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+    </a>
+    <button onclick="openAccountModal()" class="mt-3 text-sm font-semibold text-white px-5 py-3 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative;display:flex;align-items:center;padding:96px 16px;overflow:hidden;background:linear-gradient(135deg,#0f172a,#1e3a5f,#0f172a);">
+  <div style="position:absolute;inset:0;pointer-events:none;">
+    <div style="position:absolute;top:0;left:0;width:600px;height:600px;background:#2563eb;border-radius:50%;filter:blur(140px);opacity:0.2;"></div>
+    <div style="position:absolute;bottom:0;right:0;width:500px;height:500px;background:#9333ea;border-radius:50%;filter:blur(120px);opacity:0.2;"></div>
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:#06b6d4;border-radius:50%;filter:blur(160px);opacity:0.1;"></div>
+  </div>
+  <div style="max-width:1152px;margin:0 auto;position:relative;z-index:10;text-align:center;width:100%;">
+    <p style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);color:#fff;font-weight:400;margin-bottom:8px;letter-spacing:0.02em;">BioMed Advisor</p>
+    <p style="font-size:15px;color:#34d399;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:32px;">AI Built for Biomedical Research &amp; Funding</p>
+    <h1 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(3rem,5vw,4.5rem);color:#fff;margin-bottom:24px;line-height:1.1;">
+      Win More Grants<br/>
+      <span style="background:linear-gradient(90deg,#60a5fa,#22d3ee,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:textShimmer 6s ease-in-out infinite;">with Better AI</span>
+    </h1>
+    <p style="font-size:clamp(1.1rem,2vw,1.4rem);color:#bfdbfe;max-width:768px;margin:0 auto 40px;line-height:1.7;font-weight:300;">
+      Verifiable citations. Agency-aligned proposals. Institutional-grade IP protection.<br/>
+      The only AI built exclusively for biomedical grant success.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:32px;">
+      <button onclick="openAccountModal()" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:18px;padding:16px 40px;border-radius:12px;background:#10b981;box-shadow:0 20px 40px rgba(16,185,129,0.4);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">
+        Start Free Research Account
+      </button>
+      <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:18px;padding:16px 40px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.25);text-decoration:none;backdrop-filter:blur(8px);">
+        Schedule a Briefing
+      </a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;font-size:14px;color:#93c5fd;margin-bottom:40px;">
+      <span>&#10003; No credit card required</span>
+      <span>&#10003; IP-safe by design</span>
+      <span>&#10003; Instant access</span>
+    </div>
+    <div style="max-width:672px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;">
+      <p style="color:rgba(147,197,253,0.7);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">Trusted by researchers at</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:32px;font-size:14px;color:rgba(191,219,254,0.6);font-weight:500;">
+        <span>UT Austin</span>
+        <span>&middot;</span>
+        <span>University Hospital W&uuml;rzburg</span>
+        <span>&middot;</span>
+        <span>Bio Deutschland</span>
+        <span>&middot;</span>
+        <span>Bio-M Munich</span>
+      </div>
+      <p style="color:rgba(147,197,253,0.5);font-size:14px;font-style:italic;margin-top:16px;max-width:512px;margin-left:auto;margin-right:auto;">&ldquo;Clearly far better than ChatGPT alone, with clear chain-of-thought transparency.&rdquo; &mdash; Dr. Oliver Schacht</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCHER VALIDATION -->
+<section class="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3" style="font-family:'DM Sans',sans-serif;font-weight:700;">Researcher Validation</h2>
+      <p class="text-lg text-gray-600">Trusted by leading scientists and institutions</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="testimonial-card bg-white border border-gray-200 rounded-2xl p-8 shadow-lg flex flex-col">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#3b82f6,#6366f1);">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <blockquote class="text-lg text-gray-900 mb-6 leading-relaxed italic flex-grow">Extremely positively surprised by the quality and traceability of the answers. Clearly far better than ChatGPT alone, with clear chain-of-thought transparency and second-opinion capability.</blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background:linear-gradient(135deg,#3b82f6,#4f46e5);">OS</div>
+          <div>
+            <p class="font-semibold text-gray-900">Dr. Oliver Schacht</p>
+            <p class="text-sm text-gray-600">CEO, Life Science Nord | President, Bio Deutschland e.V.</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card bg-white border border-gray-200 rounded-2xl p-8 shadow-lg flex flex-col">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#a855f7,#ec4899);">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <blockquote class="text-lg text-gray-900 mb-6 leading-relaxed italic flex-grow">The BioMed Advisor supports us in querying complex relationships between the tumor microenvironment, GDF-15-mediated immune escape and therapy response in a structured way. It reliably provides the necessary depth of content.</blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background:linear-gradient(135deg,#a855f7,#ec4899);">JW</div>
+          <div>
+            <p class="font-semibold text-gray-900">Prof. Dr. J&ouml;rg Wischhusen</p>
+            <p class="text-sm text-gray-600">University Hospital W&uuml;rzburg</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card bg-white border border-gray-200 rounded-2xl p-8 shadow-lg flex flex-col">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#14b8a6,#06b6d4);">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <blockquote class="text-lg text-gray-900 mb-6 leading-relaxed italic flex-grow">Particularly noteworthy are the exceptional analytical depth and reliability, as well as the consistently critical feedback without hallucinations. BioMed Advisor has elevated our efficiency and decision-making to a previously unattainable level.</blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background:linear-gradient(135deg,#14b8a6,#06b6d4);">AF</div>
+          <div>
+            <p class="font-semibold text-gray-900">Dr. med. Anna Fleischer, M.Sc, MHBA</p>
+            <p class="text-sm text-gray-600">ENDOLEASE Systems</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card bg-white border border-gray-200 rounded-2xl p-8 shadow-lg flex flex-col">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#10b981,#22c55e);">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <blockquote class="text-lg text-gray-900 mb-6 leading-relaxed italic flex-grow">I particularly value its clear architecture, strong data sovereignty, and consistent focus on research users. Among our biotech cluster, BmA presented itself as a useful tool, and GRAU DATA as a competent, technically solid, and genuinely enthusiastic partner.</blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background:linear-gradient(135deg,#10b981,#22c55e);">TB</div>
+          <div>
+            <p class="font-semibold text-gray-900">Dr. Tim-Henrik Bruun</p>
+            <p class="text-sm text-gray-600">Bio-M, Munich</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card bg-white border border-gray-200 rounded-2xl p-8 shadow-lg flex flex-col">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <blockquote class="text-lg text-gray-900 mb-6 leading-relaxed italic flex-grow">I prefer BioMed Advisor over ChatGPT Plus and Perplexity Pro for finding niche publications. It catches papers and nuances that other tools miss.</blockquote>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background:linear-gradient(135deg,#f59e0b,#f97316);">LH</div>
+          <div>
+            <p class="font-semibold text-gray-900">Luke Hebert</p>
+            <p class="text-sm text-gray-600">Graduate Research Assistant</p>
+            <p class="text-sm text-gray-600">Cell &amp; Molecular Biology &middot; UT Austin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IP PROTECTION -->
+<section class="relative py-32 px-4 bg-gradient-to-b from-slate-50 to-white">
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-teal-500 to-transparent"></div>
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal flex items-center gap-3 mb-8 justify-center">
+      <div class="bg-slate-800 p-3 rounded-xl">
+        <svg class="w-8 h-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h2 class="text-4xl md:text-5xl">Protect Your Research IP by Design</h2>
+    </div>
+    <p class="reveal text-2xl text-gray-600 mb-12 text-center max-w-3xl mx-auto leading-relaxed">
+      Your unpublished work should never become someone else's training data.
+    </p>
+    <div class="reveal bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl">
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-teal-500 p-4 rounded-full mb-4 shadow-lg" style="box-shadow:0 10px 30px rgba(20,184,166,0.3);">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <p class="text-slate-200 font-medium">Private &amp; Private Cloud Models</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-amber-500 p-4 rounded-full mb-4 shadow-lg" style="box-shadow:0 10px 30px rgba(245,158,11,0.3);">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+          </div>
+          <p class="text-slate-200 font-medium">Query Fragmentation</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-indigo-500 p-4 rounded-full mb-4 shadow-lg" style="box-shadow:0 10px 30px rgba(99,102,241,0.3);">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <p class="text-slate-200 font-medium">Full Institutional Control</p>
+        </div>
+      </div>
+      <div class="bg-white/5 rounded-xl p-6 border-l-4 border-teal-400">
+        <p class="text-lg text-slate-300 mb-4 leading-relaxed">
+          BioMed Advisor supports private and private cloud models, fragments queries across systems so no single AI can reconstruct your research, and gives your institution full control over model selection, routing, and retention.
+        </p>
+        <p class="text-xl text-teal-300 italic font-medium">
+          This isn't a feature. It's a requirement for serious research institutions.
+        </p>
+        <a href="/data-sovereignty" class="inline-flex items-center gap-2 mt-5 text-teal-300 font-semibold text-sm no-underline hover:gap-3 transition-all">Explore data sovereignty in depth &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="relative py-32 px-4 overflow-hidden" style="background:linear-gradient(to bottom,#7f1d1d,#991b1b,#7f1d1d);">
+  <div class="absolute inset-0 stripe-bg opacity-10"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-red-400 to-transparent"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="reveal flex justify-center mb-8">
+      <div class="alert-pulse inline-flex items-center gap-3 border-2 border-red-500 rounded-full px-8 py-3 shadow-2xl" style="background:rgba(69,10,10,0.8);">
+        <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        <p class="text-red-200 font-bold tracking-wide uppercase text-sm">Critical Risk Alert</p>
+      </div>
+    </div>
+    <h2 class="reveal text-4xl md:text-6xl mb-6 text-center text-white font-bold">The Problem</h2>
+    <p class="reveal text-2xl md:text-3xl text-red-100 mb-12 text-center font-light">
+      Everyone is using AI. <span class="text-yellow-300 font-bold">That's the problem.</span>
+    </p>
+    <div class="reveal bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 rounded-r-xl p-8 mb-16 max-w-4xl mx-auto shadow-2xl">
+      <div class="flex items-start gap-4">
+        <svg class="w-8 h-8 text-yellow-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        <div>
+          <p class="text-lg text-gray-600 italic mb-2">As one national research funder warned:</p>
+          <p class="text-2xl text-gray-900 font-medium leading-relaxed">
+            "AI will increase proposal quality and volume across the board, making differentiation harder for reviewers."
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="reveal text-xl md:text-2xl text-red-50 mb-8 text-center max-w-4xl mx-auto leading-relaxed">
+      The institutions that win won't be those using AI; everyone will.
+    </p>
+    <p class="reveal text-xl md:text-2xl text-red-50 mb-8 text-center max-w-4xl mx-auto leading-relaxed">
+      Winners will be the ones using <span class="text-yellow-300 font-bold">better AI</span>.
+    </p>
+    <div class="reveal mb-16 max-w-3xl mx-auto">
+      <div class="border-2 border-yellow-500/50 rounded-2xl p-6" style="background:rgba(69,10,10,0.5);">
+        <p class="text-xl md:text-2xl text-center leading-relaxed">
+          <span class="text-yellow-300 font-bold">Yet most researchers still rely on generic tools like ChatGPT and Gemini</span>
+          <span class="text-red-100">, tools built for conversation, not science, creating six critical risks.</span>
+        </p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="reveal stat-card relative group">
+        <div class="absolute inset-0 bg-yellow-500 rounded-2xl blur-xl opacity-30"></div>
+        <div class="relative bg-white/95 border-2 border-red-400 rounded-2xl p-8 text-center shadow-2xl">
+          <p class="text-5xl mb-3 font-bold text-red-900">100&ndash;300+</p>
+          <p class="text-gray-700 font-medium">hours per major grant</p>
+        </div>
+      </div>
+      <div class="reveal delay-1 stat-card relative group">
+        <div class="absolute inset-0 bg-yellow-500 rounded-2xl blur-xl opacity-30"></div>
+        <div class="relative bg-white/95 border-2 border-red-400 rounded-2xl p-8 text-center shadow-2xl">
+          <p class="text-5xl mb-3 font-bold text-red-900">3&ndash;6 mo</p>
+          <p class="text-gray-700 font-medium">typical resubmission cycle</p>
+        </div>
+      </div>
+      <div class="reveal delay-2 stat-card relative group">
+        <div class="absolute inset-0 bg-yellow-500 rounded-2xl blur-xl opacity-30"></div>
+        <div class="relative bg-white/95 border-2 border-red-400 rounded-2xl p-8 text-center shadow-2xl">
+          <p class="text-5xl mb-3 font-bold text-red-900">~20%</p>
+          <p class="text-gray-700 font-medium">average win rate</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIX PROBLEMS -->
+<section class="relative py-32 px-4 bg-white">
+  <div class="absolute inset-0" style="background:radial-gradient(circle at top right,#eff6ff,transparent 60%);opacity:0.5;"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="reveal text-center mb-16">
+      <div class="inline-block bg-red-100 rounded-full px-6 py-2 mb-6">
+        <p class="text-red-600 font-semibold">Critical Risks</p>
+      </div>
+      <h2 class="text-4xl md:text-5xl mb-6">Six Critical Problems with Generic AI</h2>
+      <div class="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div class="reveal problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+        <div class="bg-red-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="text-xl mb-4 font-semibold">Fabricated Citations</h3>
+        <p class="text-gray-600 leading-relaxed">Up to 30% of AI-generated references are fake. One bad citation can destroy reviewer trust.</p>
+      </div>
+      <div class="reveal delay-1 problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+        <div class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+        </div>
+        <h3 class="text-xl mb-4 font-semibold">No Specialized Scientific Databases</h3>
+        <p class="text-gray-600 leading-relaxed">Generic AI lacks direct access to PubMed, ClinicalTrials, DrugBank, KEGG, and UniProt.</p>
+      </div>
+      <div class="reveal delay-2 problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+        <div class="bg-orange-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-xl mb-4 font-semibold">Loss of Research Data Sovereignty</h3>
+        <p class="text-gray-600 leading-relaxed">Your unpublished research feeds commercial platforms you don't control.</p>
+      </div>
+    </div>
+    <div id="more-problems" style="display:none;">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+          <div class="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl mb-4 font-semibold">Single Model Limitations</h3>
+          <p class="text-gray-600 leading-relaxed">No cross-validation. No second opinion. Hidden bias risk.</p>
+        </div>
+        <div class="problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+          <div class="bg-green-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+          </div>
+          <h3 class="text-xl mb-4 font-semibold">Linear Reasoning</h3>
+          <p class="text-gray-600 leading-relaxed">Chain-of-thought gives one path. Research requires parallel hypothesis exploration.</p>
+        </div>
+        <div class="problem-card group relative bg-white border-2 border-gray-200 rounded-2xl p-8 h-full">
+          <div class="bg-slate-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="text-xl mb-4 font-semibold">Vendor Lock-in</h3>
+          <p class="text-gray-600 leading-relaxed">Your workflow becomes hostage to one provider's pricing and policies.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button id="toggle-problems" onclick="toggleProblems()" class="inline-flex items-center gap-2 text-lg px-8 py-4 border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 rounded-xl transition-all font-medium">
+        Show 3 More Risks
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="relative py-32 px-4 bg-gradient-to-b from-slate-50 to-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal text-center mb-16">
+      <div class="inline-block bg-purple-100 rounded-full px-6 py-2 mb-6">
+        <p class="text-purple-600 font-semibold">Side-by-Side Comparison</p>
+      </div>
+      <h2 class="text-4xl md:text-5xl mb-6">Generic AI vs BioMed Advisor</h2>
+      <div class="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-purple-600 to-transparent"></div>
+    </div>
+    <div class="reveal relative">
+      <div class="absolute -inset-4 bg-gradient-to-r from-red-200 via-purple-200 to-green-200 rounded-3xl blur-2xl opacity-20"></div>
+      <div class="relative bg-white border-2 border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+        <div class="grid grid-cols-3 gap-4 p-6 bg-gradient-to-r from-slate-50 to-gray-50 border-b-2 border-gray-200">
+          <div class="flex items-center">
+            <p class="text-lg font-semibold text-gray-900">Feature</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-red-100 rounded-lg px-4 py-2 mb-2">
+              <p class="text-lg font-bold text-red-700">Generic AI</p>
+            </div>
+            <p class="text-xs text-gray-500">ChatGPT, Gemini, etc.</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-100 rounded-lg px-4 py-2 mb-2">
+              <p class="text-lg font-bold text-green-700">BioMed Advisor</p>
+            </div>
+            <p class="text-xs text-gray-500">Purpose-built for grants</p>
+          </div>
+        </div>
+        <div id="comparison-rows"></div>
+      </div>
+    </div>
+    <div class="reveal mt-12 text-center">
+      <div class="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-2xl p-8 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-gray-800 leading-relaxed">
+          <span class="font-bold text-blue-600">BioMed Advisor</span> is specifically engineered for grant proposals and research.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL HIGHLIGHT (Iverson) -->
+<section class="relative py-24 px-4 overflow-hidden" style="background:linear-gradient(135deg,#0f172a,#111827,#18181b);">
+  <div class="absolute inset-0 opacity-20 pointer-events-none">
+    <div class="absolute top-10 left-10 w-64 h-64 bg-amber-500 rounded-full blur-3xl glow-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-80 h-80 bg-orange-600 rounded-full blur-3xl glow-pulse-delayed"></div>
+  </div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="reveal-scale relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur-2xl opacity-20"></div>
+      <div class="relative rounded-3xl p-12 md:p-16" style="background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.12);">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl" style="background:linear-gradient(135deg,#fbbf24,#f97316);">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <p class="text-2xl md:text-3xl lg:text-4xl text-white italic text-center mb-10 leading-relaxed font-light">
+          "I was struck by the ability to pull out nuanced arguments and write them in a cogent way that only experts can interpret or appreciate."
+        </p>
+        <div class="w-24 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent mx-auto mb-8"></div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div class="w-20 h-20 rounded-full p-1" style="background:linear-gradient(135deg,#fbbf24,#f97316,#eab308);">
+            <div class="w-full h-full rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#334155,#1e293b);">
+              <span class="text-3xl font-bold text-white" style="font-family:'DM Serif Display',serif;">BI</span>
+            </div>
+          </div>
+          <div class="text-center md:text-left">
+            <p class="text-xl md:text-2xl font-semibold text-white mb-1">Dr. Brent Iverson</p>
+            <p class="text-lg text-amber-200">Professor of Chemistry</p>
+            <p class="text-base text-amber-300/70">The University of Texas at Austin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVEN RESULTS -->
+<section class="relative py-32 px-4 overflow-hidden text-white" style="background:linear-gradient(135deg,#0f172a,#064e3b,#0f172a);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 right-20 w-96 h-96 bg-emerald-500 rounded-full blur-3xl glow-pulse"></div>
+    <div class="absolute bottom-20 left-20 w-80 h-80 bg-teal-500 rounded-full blur-3xl glow-pulse-delayed"></div>
+  </div>
+  <div class="absolute inset-0 grid-bg opacity-20" style="pointer-events:none;"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="reveal text-center mb-16">
+      <div class="inline-block rounded-full px-6 py-2 mb-6" style="background:rgba(16,185,129,0.2);border:1px solid rgba(52,211,153,0.3);">
+        <p class="text-emerald-300 font-semibold">Data-Driven Performance</p>
+      </div>
+      <h2 class="text-4xl md:text-5xl mb-6">Proven Results</h2>
+      <div class="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+        <div class="relative rounded-2xl p-8 hover:-translate-y-2 transition-all" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+          <p class="text-6xl mb-4 font-bold text-center bg-gradient-to-br from-white to-emerald-300 bg-clip-text text-transparent">14&times;</p>
+          <p class="text-xl text-emerald-100 text-center leading-relaxed">Literature review speed</p>
+        </div>
+      </div>
+      <div class="reveal delay-1 group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+        <div class="relative rounded-2xl p-8 hover:-translate-y-2 transition-all" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+          <p class="text-6xl mb-4 font-bold text-center bg-gradient-to-br from-white to-emerald-300 bg-clip-text text-transparent">7&ndash;10&times;</p>
+          <p class="text-xl text-emerald-100 text-center leading-relaxed">Faster hypothesis generation</p>
+        </div>
+      </div>
+      <div class="reveal delay-2 group relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+        <div class="relative rounded-2xl p-8 hover:-translate-y-2 transition-all" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+          <p class="text-6xl mb-4 font-bold text-center bg-gradient-to-br from-white to-emerald-300 bg-clip-text text-transparent">9&ndash;14&times;</p>
+          <p class="text-xl text-emerald-100 text-center leading-relaxed">Faster data analysis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="relative py-32 px-4 bg-gradient-to-b from-white to-slate-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-16">
+      <div class="inline-block bg-green-100 rounded-full px-6 py-2 mb-6">
+        <p class="text-green-700 font-semibold">Financial Impact</p>
+      </div>
+      <h2 class="text-4xl md:text-5xl mb-4">Institutional ROI</h2>
+      <div class="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+      <div class="reveal-left relative bg-white border-2 border-gray-300 rounded-2xl p-10 shadow-lg h-full">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">Current Grant Funding</h3>
+        <div class="space-y-6 mb-8">
+          <div>
+            <p class="text-lg text-gray-600">Proposals per year</p>
+            <p class="text-3xl font-bold text-gray-900">1,000</p>
+          </div>
+          <div>
+            <p class="text-lg text-gray-600">Average award</p>
+            <p class="text-3xl font-bold text-gray-900">$500,000</p>
+          </div>
+          <div>
+            <p class="text-lg text-gray-600">Win rate (NIH 2025)</p>
+            <p class="text-3xl font-bold text-gray-900">17&ndash;20%</p>
+          </div>
+        </div>
+        <div class="pt-6 border-t-2 border-gray-200">
+          <p class="text-lg text-gray-600 mb-2">Annual funding</p>
+          <p class="text-5xl md:text-6xl font-bold text-gray-900">$100M</p>
+          <p class="text-sm text-gray-500 mt-2">Based on 20% average win rate</p>
+        </div>
+      </div>
+      <div class="reveal-right group relative bg-white border-2 border-green-200 rounded-2xl p-8 shadow-lg hover:border-green-400 hover:shadow-2xl transition-all h-full flex flex-col">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">With BioMed Advisor</h3>
+        <div class="rounded-xl p-8 mb-8 text-white" style="background:linear-gradient(135deg,#22c55e,#059669);">
+          <p class="text-lg opacity-90 mb-2">Even a modest improvement of</p>
+          <p class="text-6xl md:text-7xl font-bold">+3%</p>
+          <p class="text-lg text-green-100 mt-4">20.0% &rarr; 20.6%</p>
+          <p class="text-sm text-green-100 mt-3 opacity-80">Conservative estimate based on internal benchmarks</p>
+        </div>
+        <div class="pt-6 border-t-2 border-green-300">
+          <p class="text-lg text-gray-700 mb-3">Additional funding potential</p>
+          <div class="flex items-baseline gap-2">
+            <p class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">$3M+</p>
+            <p class="text-2xl text-gray-600 font-semibold">annually</p>
+          </div>
+          <p class="text-sm text-gray-500 mt-3">~6 additional awards &times; $500k average = $3M annually</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal max-w-4xl mx-auto text-center">
+      <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8">
+        <p class="text-xl md:text-2xl text-gray-800 leading-relaxed">
+          With NIH success rates at historic lows (17&ndash;20% in 2025), even a <span class="font-bold text-blue-600">modest 3&ndash;5% relative improvement</span> delivers <span class="font-bold text-green-600">$3M&ndash;$5M+ in additional annual funding</span>, with faster turnaround times and protected IP.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TRIAL BANNER -->
+<section class="relative py-20 px-4 overflow-hidden" style="background:linear-gradient(135deg,#064e3b,#0f766e,#0f172a);">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full glow-pulse" style="filter:blur(120px);opacity:0.2;"></div>
+    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-teal-400 rounded-full glow-pulse-delayed" style="filter:blur(140px);opacity:0.15;"></div>
+  </div>
+  <div class="absolute inset-0 grid-bg opacity-10 pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="reveal-left flex-1 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full px-5 py-2 mb-6" style="background:rgba(16,185,129,0.2);border:1px solid rgba(52,211,153,0.4);">
+          <span class="text-emerald-300 text-sm font-semibold tracking-wide uppercase">Free Research Account</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl text-white mb-5 leading-tight">
+          Test BioMed Advisor <span class="text-emerald-400">Risk-Free.</span>
+        </h2>
+        <p class="text-lg md:text-xl text-teal-100 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Create a free research account to validate citations, align proposals to agency criteria, and protect your IP. Instant access. No credit card required.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+          <div class="flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);">Real citation validation</div>
+          <div class="flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);">IP-safe by design</div>
+          <div class="flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);">Agency-aligned output</div>
+        </div>
+        <button onclick="openAccountModal()" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-lg px-10 py-4 rounded-xl shadow-2xl transition-all hover:-translate-y-0.5" style="box-shadow:0 20px 40px rgba(16,185,129,0.4);">
+          Start Your Free Research Account
+        </button>
+        <p class="text-teal-300 text-sm mt-3">No credit card required. Instant access.</p>
+      </div>
+      <div class="reveal-right flex-shrink-0 w-full max-w-sm">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-3xl blur-2xl opacity-25"></div>
+          <div class="relative rounded-3xl p-8" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);">
+            <p class="text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">Free Account Includes</p>
+            <div>
+              <div class="flex items-center gap-3 py-2.5 border-b border-white/10">
+                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="text-white text-sm">Proposal gap analysis</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-b border-white/10">
+                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="text-white text-sm">PubMed citation validation</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-b border-white/10">
+                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="text-white text-sm">NIH / NSF alignment check</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-b border-white/10">
+                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="text-white text-sm">IP-safe query routing</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5">
+                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0"><svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <span class="text-white text-sm">Reviewer criteria mapping</span>
+              </div>
+            </div>
+            <div class="mt-6 rounded-xl p-4 text-center" style="background:rgba(16,185,129,0.2);border:1px solid rgba(52,211,153,0.3);">
+              <p class="text-emerald-200 text-sm">Upgrade anytime to full institutional access</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="relative py-24 px-4 overflow-hidden text-white" style="background:linear-gradient(135deg,#0f172a,#1e3a5f,#0f172a);">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500 rounded-full glow-pulse" style="filter:blur(120px);opacity:0.2;"></div>
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500 rounded-full glow-pulse-delayed" style="filter:blur(140px);opacity:0.15;"></div>
+  </div>
+  <div class="absolute inset-0 grid-bg opacity-10"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="reveal text-center mb-16">
+      <h2 class="text-4xl md:text-5xl mb-4 font-bold leading-tight">Choose Your Path to Better Grants</h2>
+      <p class="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">Whether you're ready to dive in or want to explore first, we have an option for every research team.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-14">
+      <div class="reveal group relative">
+        <div class="relative h-full flex flex-col rounded-2xl p-8 transition-all duration-300" style="background:rgba(255,255,255,0.08);border:2px solid rgba(52,211,153,0.6);box-shadow:0 0 0 2px rgba(52,211,153,0.3);">
+          <div class="flex items-center justify-between mb-6">
+            <span class="bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Most Popular</span>
+          </div>
+          <h3 class="text-xl text-white mb-3">Start Free Research Account</h3>
+          <p class="text-blue-200 text-sm leading-relaxed flex-1 mb-8">Validate citations, align proposals, and protect your IP today. No credit card required.</p>
+          <button onclick="openAccountModal()" class="w-full py-4 text-base font-semibold bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg shadow-lg transition-all">Start Free Now &rarr;</button>
+        </div>
+      </div>
+      <div class="reveal delay-1 group relative">
+        <div class="relative h-full flex flex-col rounded-2xl p-8 transition-all duration-300" style="background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.15);">
+          <div class="mb-6" style="height:28px;"></div>
+          <h3 class="text-xl text-white mb-3">Schedule a Briefing</h3>
+          <p class="text-blue-200 text-sm leading-relaxed flex-1 mb-8">See BioMed Advisor in action with your team. We'll walk through your specific grant workflow.</p>
+          <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9" target="_blank" rel="noopener" class="w-full py-4 text-base font-semibold rounded-lg flex items-center justify-center transition-all no-underline" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Book a Briefing &rarr;</a>
+        </div>
+      </div>
+      <div class="reveal delay-2 group relative">
+        <div class="relative h-full flex flex-col rounded-2xl p-8 transition-all duration-300" style="background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.15);">
+          <div class="mb-6" style="height:28px;"></div>
+          <h3 class="text-xl text-white mb-3">Contact Us</h3>
+          <p class="text-blue-200 text-sm leading-relaxed flex-1 mb-8">Have questions about BioMed Advisor? Reach out and our team will get back to you promptly.</p>
+          <button onclick="openContactModal()" class="w-full py-4 text-base font-semibold rounded-lg flex items-center justify-center transition-all" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Send Us a Message &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <p class="reveal text-center text-blue-300 text-sm">No spam. Your information is never shared with third parties.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0a0f1a;color:rgba(255,255,255,0.55);padding:48px 40px;box-sizing:border-box;">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;margin-bottom:32px;">
+      <div>
+        <img src="/assets/grau-logo-white.svg" alt="GRAU DATA" style="height:42px;width:auto;display:block;margin-bottom:10px;"/>
+        <div style="font-size:14px;line-height:1.6;">Research-grade AI for biomedical science</div>
+      </div>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
+        <a href="#" onclick="openContactModal();return false;" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;">Contact Us</a>
+        <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;">Schedule a Briefing</a>
+        <a href="/about.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;">About GRAU DATA</a>
+        <a href="/privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;">Privacy Policy</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;">
+      <span>(c) 2026 GRAU DATA LLC. All rights reserved.</span>
+      <span>BioMed Advisor is a product of GRAU DATA LLC, an authorized reseller of GRAU DATA GmbH.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ACCOUNT MODAL -->
+<div id="account-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;background:rgba(10,25,41,0.85);padding:20px;backdrop-filter:blur(4px);" onclick="if(event.target===this)closeAccountModal();">
+  <div style="background:#fff;border-radius:16px;padding:44px 44px 36px;max-width:540px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.4);max-height:92vh;overflow-y:auto;">
+    <button onclick="closeAccountModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1;padding:4px;" aria-label="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#10b981,#059669);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:20px;font-weight:700;">BmA</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#0f172a;margin:0 0 8px;font-weight:400;">Start Your Free Research Account</h3>
+      <p style="font-size:14px;color:#6b7280;margin:0;">No credit card required. Instant access.</p>
+    </div>
+    <form id="account-form" action="https://formspree.io/f/xojronob" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">First Name *</label>
+          <input name="first_name" required placeholder="Jane" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Last Name *</label>
+          <input name="last_name" required placeholder="Smith" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Institution *</label>
+        <input name="institution" required placeholder="University of..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Position / Title *</label>
+        <input name="position" required placeholder="Principal Investigator, Researcher..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Email Address *</label>
+        <input name="email" type="email" required placeholder="jane@university.edu" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Phone *</label>
+        <input name="phone" type="tel" required placeholder="+1 555 555 5555" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <input type="hidden" name="source" value="grants-account"/>
+      <button type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#10b981,#059669);color:white;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(16,185,129,0.4);margin-top:4px;">Get Free Access</button>
+      <p style="text-align:center;font-size:12px;color:#9ca3af;margin:4px 0 0;line-height:1.5;">By submitting, you accept to be contacted by GRAU DATA.</p>
+    </form>
+    <div id="account-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">&#x1F389;</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#0f172a;margin:0 0 8px;font-weight:400;">You&apos;re in!</h3>
+      <p style="color:#6b7280;font-size:15px;">A member of the GRAU DATA team will contact you shortly. Welcome to BioMed Advisor.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;background:rgba(10,25,41,0.85);padding:20px;backdrop-filter:blur(4px);" onclick="if(event.target===this)closeContactModal();">
+  <div style="background:#fff;border-radius:16px;padding:44px 44px 36px;max-width:540px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.4);max-height:92vh;overflow-y:auto;">
+    <button onclick="closeContactModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1;padding:4px;" aria-label="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:20px;font-weight:700;">BmA</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#0f172a;margin:0 0 8px;font-weight:400;">Contact Us</h3>
+      <p style="font-size:14px;color:#6b7280;margin:0;">Send us a message and we&apos;ll respond promptly.</p>
+    </div>
+    <form id="contact-form" action="https://formspree.io/f/mojnopqw" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Name *</label>
+        <input name="name" required placeholder="Jane Smith" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Email Address *</label>
+        <input name="email" type="email" required placeholder="jane@university.edu" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Subject *</label>
+        <input name="subject" required placeholder="How can we help?" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Message *</label>
+        <textarea name="message" required rows="5" placeholder="Tell us what you need..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;resize:vertical;font-family:inherit;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+      </div>
+      <input type="hidden" name="source" value="grants-contact"/>
+      <button type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#3b82f6,#2563eb);color:white;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(59,130,246,0.4);margin-top:4px;">Send Message</button>
+      <p style="text-align:center;font-size:12px;color:#9ca3af;margin:4px 0 0;line-height:1.5;">By submitting, you accept to be contacted by GRAU DATA.</p>
+    </form>
+    <div id="contact-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">&#x2713;</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#0f172a;margin:0 0 8px;font-weight:400;">Message sent!</h3>
+      <p style="color:#6b7280;font-size:15px;">A member of the GRAU DATA team will be in touch shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('visible'); });
+}, {threshold:0.1, rootMargin:'-50px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){
+  el.classList.add('animate');
+  observer.observe(el);
+});
+
+// Nav scroll shadow
+var nav = document.getElementById('bma-nav');
+function updateNavShadow(){
+  if(!nav) return;
+  nav.style.boxShadow = window.scrollY > 8 ? '0 8px 24px rgba(0,0,0,0.35)' : 'none';
+}
+window.addEventListener('scroll', updateNavShadow, {passive:true});
+updateNavShadow();
+
+// Mobile menu
+function toggleMobileMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+// Six problems toggle
+function toggleProblems(){
+  var more = document.getElementById('more-problems');
+  var hidden = more.style.display === 'none';
+  more.style.display = hidden ? 'block' : 'none';
+  document.getElementById('toggle-problems').textContent = hidden ? 'Show Fewer Risks' : 'Show 3 More Risks';
+}
+
+// Comparison table
+var features = ['Citation Validation','Scientific Databases','Research IP Protection','Grant Reviewer Alignment','Multi-Model Reasoning'];
+var tbody = document.getElementById('comparison-rows');
+features.forEach(function(f,i){
+  var row = document.createElement('div');
+  row.className = 'grid grid-cols-3 gap-4 p-6 items-center hover:bg-slate-50 transition-colors' + (i < features.length-1 ? ' border-b border-gray-200' : '');
+  row.innerHTML = '<div><p class="text-base md:text-lg font-medium text-gray-900">' + f + '</p></div>'
+    + '<div class="flex items-center justify-center"><div class="bg-red-50 rounded-full p-2"><svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></div></div>'
+    + '<div class="flex items-center justify-center"><div class="bg-green-50 rounded-full p-2"><svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div></div>';
+  tbody.appendChild(row);
+});
+
+// Modals
+function openAccountModal(){
+  document.getElementById('account-modal').style.display='flex';
+  document.body.style.overflow='hidden';
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function closeAccountModal(){
+  document.getElementById('account-modal').style.display='none';
+  document.body.style.overflow='';
+}
+function openContactModal(){
+  document.getElementById('contact-modal').style.display='flex';
+  document.body.style.overflow='hidden';
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function closeContactModal(){
+  document.getElementById('contact-modal').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape'){ closeAccountModal(); closeContactModal(); }
+});
+
+// Formspree submit handlers
+function wireForm(formId, successId){
+  var form = document.getElementById(formId);
+  if(!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = this.querySelector('button[type=submit]');
+    var originalText = btn.textContent;
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    try {
+      var res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {'Accept':'application/json'}
+      });
+      if(res.ok){
+        this.style.display = 'none';
+        document.getElementById(successId).style.display = 'block';
+      } else {
+        btn.textContent = 'Error — please try again';
+        btn.disabled = false;
+        setTimeout(function(){ btn.textContent = originalText; }, 3000);
+      }
+    } catch(err){
+      btn.textContent = 'Error — please try again';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent = originalText; }, 3000);
+    }
+  });
+}
+wireForm('account-form', 'account-success');
+wireForm('contact-form', 'contact-success');
+</script>
+
+</body>
+</html>

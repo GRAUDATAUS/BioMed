@@ -1,0 +1,16 @@
+# proposals.biomedadvisor.com -> /grants (the old grants-focused site)
+# Configure this redirect at the DNS/subdomain level in Netlify or via host record.
+
+# Old GRAU-hosted URLs that should now point to the canonical pages on biomedadvisor.com
+# These work if/when biomedadvisor.com is configured to also accept these old paths.
+
+# Trailing slash normalization
+/grants/         /grants          301!
+/data-sovereignty/   /data-sovereignty   301!
+
+# Any old BmA URLs people may have bookmarked
+/biomedadvisor                          /              301!
+/biomedadvisor-grants                   /grants        301!
+/biomedadvisor-data-sovereignty         /data-sovereignty   301!
+/biomedadvisor-how-it-works             /              301!
+/how-it-works                           /              301!

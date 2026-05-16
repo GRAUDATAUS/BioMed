@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta name="theme-color" content="#0a0d1a"/>
+<title>BioMed Advisor &mdash; Bio-IT World 2026</title>
+<meta name="description" content="Better AI for biomedical research. Free account, drone giveaway, or more info from Bio-IT World 2026."/>
+<meta property="og:title" content="BioMed Advisor &mdash; Bio-IT World 2026"/>
+<meta property="og:description" content="Better AI for biomedical research. Three ways to engage from Bio-IT World 2026."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://biomedadvisor.com/bioit"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*{font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{background:#0a0d1a;color:#fff;}
+body{min-height:100vh;display:flex;flex-direction:column;}
+.page{flex:1;display:flex;flex-direction:column;background:radial-gradient(ellipse at top, rgba(59,130,246,0.18) 0%, transparent 60%),linear-gradient(180deg,#0a0d1a 0%,#0f172a 100%);}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;gap:12px;}
+.topbar img{height:34px;width:auto;display:block;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.35);color:#93c5fd;font-size:11px;font-weight:700;padding:6px 12px;border-radius:9999px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
+.badge-dot{width:6px;height:6px;background:#10b981;border-radius:9999px;box-shadow:0 0 0 0 rgba(16,185,129,0.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,0.6);}50%{box-shadow:0 0 0 8px rgba(16,185,129,0);}}
+
+.hero{padding:18px 20px 14px;text-align:center;}
+.hero-eyebrow{font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
+.hero-title{font-size:30px;font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;}
+.hero-title em{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{font-size:14px;color:#cbd5e1;line-height:1.5;max-width:480px;margin:0 auto;}
+@media(min-width:700px){
+  .hero{padding:36px 20px 20px;}
+  .hero-title{font-size:42px;}
+  .hero-sub{font-size:16px;}
+}
+
+.top-link-strip{padding:0 20px 12px;display:flex;justify-content:center;}
+.top-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#93c5fd;text-decoration:none;padding:7px 14px;border-radius:9999px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.25);font-weight:500;transition:background 0.15s,border-color 0.15s;}
+.top-link:hover,.top-link:active{background:rgba(59,130,246,0.16);border-color:rgba(59,130,246,0.5);}
+.top-link svg{width:13px;height:13px;}
+
+/* Gold "Visit the full site" link - high-contrast call to attention */
+.top-link-gold{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;
+  color:#fcd34d;
+  text-decoration:none;
+  padding:10px 20px;
+  border-radius:9999px;
+  background:linear-gradient(135deg,rgba(251,191,36,0.12) 0%,rgba(245,158,11,0.08) 100%);
+  border:1.5px solid rgba(251,191,36,0.45);
+  box-shadow:0 4px 16px rgba(251,191,36,0.15);
+  transition:background 0.15s,border-color 0.15s,transform 0.1s,box-shadow 0.15s;
+  letter-spacing:0.01em;
+}
+.top-link-gold:hover,.top-link-gold:active{
+  background:linear-gradient(135deg,rgba(251,191,36,0.22) 0%,rgba(245,158,11,0.14) 100%);
+  border-color:rgba(251,191,36,0.75);
+  color:#fde68a;
+  box-shadow:0 6px 24px rgba(251,191,36,0.28);
+  transform:translateY(-1px);
+}
+.top-link-gold svg{width:15px;height:15px;}
+
+/* Three-path chooser */
+.path-chooser{padding:6px 20px 0;display:grid;grid-template-columns:1fr;gap:10px;max-width:560px;margin:0 auto;width:100%;}
+@media(min-width:900px){.path-chooser{grid-template-columns:1fr 1fr 1fr;max-width:1000px;}}
+.path-btn{
+  display:flex;align-items:center;gap:14px;padding:18px;
+  border-radius:14px;border:1.5px solid transparent;
+  background:rgba(255,255,255,0.04);cursor:pointer;
+  transition:transform 0.1s, border-color 0.15s, background 0.15s;
+  text-align:left;font-family:inherit;color:#fff;
+  -webkit-tap-highlight-color:transparent;
+  width:100%;
+}
+.path-btn:hover,.path-btn:active{transform:translateY(-1px);}
+.path-btn.account{background:linear-gradient(135deg,rgba(16,185,129,0.10) 0%,rgba(5,150,105,0.06) 100%);border-color:rgba(16,185,129,0.35);}
+.path-btn.account:hover{border-color:rgba(16,185,129,0.7);}
+.path-btn.raffle{background:linear-gradient(135deg,rgba(251,191,36,0.10) 0%,rgba(245,158,11,0.06) 100%);border-color:rgba(251,191,36,0.35);}
+.path-btn.raffle:hover{border-color:rgba(251,191,36,0.7);}
+.path-btn.info{background:linear-gradient(135deg,rgba(139,92,246,0.10) 0%,rgba(124,58,237,0.06) 100%);border-color:rgba(139,92,246,0.35);}
+.path-btn.info:hover{border-color:rgba(139,92,246,0.7);}
+.path-icon{flex-shrink:0;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;line-height:1;}
+.path-btn.account .path-icon{background:rgba(16,185,129,0.2);}
+.path-btn.raffle .path-icon{background:rgba(251,191,36,0.2);}
+.path-btn.info .path-icon{background:rgba(139,92,246,0.2);}
+.path-info{flex:1;min-width:0;}
+.path-title{font-size:15px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:3px;}
+.path-desc{font-size:12.5px;color:#94a3b8;line-height:1.35;}
+.path-arrow{flex-shrink:0;color:#64748b;}
+
+/* Form section */
+.form-section{padding:18px 20px 0;}
+.form-wrap{max-width:560px;margin:0 auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:24px 20px 20px;box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+@media(min-width:700px){.form-wrap{padding:30px;}}
+.form-wrap.theme-account{border-color:rgba(16,185,129,0.3);box-shadow:0 20px 50px rgba(16,185,129,0.08),0 8px 24px rgba(0,0,0,0.4);}
+.form-wrap.theme-raffle{border-color:rgba(251,191,36,0.3);box-shadow:0 20px 50px rgba(251,191,36,0.08),0 8px 24px rgba(0,0,0,0.4);}
+.form-wrap.theme-info{border-color:rgba(139,92,246,0.3);box-shadow:0 20px 50px rgba(139,92,246,0.08),0 8px 24px rgba(0,0,0,0.4);}
+
+.form-eyebrow{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.theme-account .form-eyebrow{color:#6ee7b7;}
+.theme-raffle .form-eyebrow{color:#fcd34d;}
+.theme-info .form-eyebrow{color:#c4b5fd;}
+.form-title{font-size:20px;font-weight:700;margin-bottom:4px;color:#fff;line-height:1.2;}
+.form-subtitle{font-size:13.5px;color:#94a3b8;margin-bottom:18px;line-height:1.5;}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.field-full{grid-column:1 / -1;}
+.label{display:block;font-size:12px;font-weight:600;color:#cbd5e1;margin-bottom:5px;}
+.input,.textarea{
+  width:100%;padding:0 14px;
+  background:#0f172a;border:1.5px solid rgba(255,255,255,0.12);
+  border-radius:10px;font-size:16px;color:#fff;outline:none;
+  transition:border-color 0.15s,background 0.15s;
+  -webkit-appearance:none;appearance:none;
+}
+.input{height:52px;}
+.textarea{min-height:88px;padding:12px 14px;line-height:1.5;resize:vertical;font-family:inherit;}
+.input::placeholder,.textarea::placeholder{color:#64748b;}
+.input:focus,.textarea:focus{background:#111827;}
+.theme-account .input:focus,.theme-account .textarea:focus{border-color:#10b981;}
+.theme-raffle .input:focus,.theme-raffle .textarea:focus{border-color:#fbbf24;}
+.theme-info .input:focus,.theme-info .textarea:focus{border-color:#a78bfa;}
+
+/* Checkbox group */
+.check-group{display:flex;flex-direction:column;gap:10px;margin:4px 0 4px;}
+.check-row{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:14px;background:rgba(255,255,255,0.03);
+  border:1.5px solid rgba(255,255,255,0.10);
+  border-radius:12px;cursor:pointer;
+  transition:border-color 0.15s,background 0.15s;
+}
+.check-row:hover{border-color:rgba(139,92,246,0.5);background:rgba(139,92,246,0.05);}
+.check-row input[type=checkbox]{
+  flex-shrink:0;
+  width:22px;height:22px;
+  margin:0;cursor:pointer;
+  accent-color:#a78bfa;
+}
+.check-row.is-checked{border-color:rgba(139,92,246,0.6);background:rgba(139,92,246,0.08);}
+.check-text{flex:1;}
+.check-title{font-size:14px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:2px;}
+.check-desc{font-size:12.5px;color:#94a3b8;line-height:1.4;}
+
+.submit-btn{
+  width:100%;height:56px;margin-top:14px;
+  color:#fff;border:none;border-radius:12px;
+  font-size:17px;font-weight:700;cursor:pointer;
+  transition:transform 0.1s, box-shadow 0.15s, opacity 0.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.theme-account .submit-btn{background:linear-gradient(135deg,#10b981 0%,#059669 100%);box-shadow:0 10px 30px rgba(16,185,129,0.35);}
+.theme-raffle .submit-btn{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);box-shadow:0 10px 30px rgba(251,191,36,0.30);color:#0a0d1a;}
+.theme-info .submit-btn{background:linear-gradient(135deg,#a78bfa 0%,#7c3aed 100%);box-shadow:0 10px 30px rgba(139,92,246,0.30);}
+.submit-btn:active{transform:translateY(1px);}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+
+.consent{font-size:11px;color:#64748b;text-align:center;margin-top:10px;line-height:1.5;}
+
+.switch-path{text-align:center;margin-top:14px;font-size:13px;color:#94a3b8;}
+.switch-path button{background:none;border:none;color:#93c5fd;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:13px;padding:0;}
+.switch-path button:hover{color:#fff;}
+
+.success{text-align:center;padding:24px 12px;}
+.success-icon{width:64px;height:64px;border-radius:9999px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:32px;font-weight:700;}
+.theme-account .success-icon{background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 12px 30px rgba(16,185,129,0.4);}
+.theme-raffle .success-icon{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0d1a;box-shadow:0 12px 30px rgba(251,191,36,0.4);}
+.theme-info .success-icon{background:linear-gradient(135deg,#a78bfa,#7c3aed);box-shadow:0 12px 30px rgba(139,92,246,0.4);}
+.success-title{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;margin-bottom:8px;font-weight:400;}
+.success-body{font-size:15px;color:#cbd5e1;line-height:1.55;max-width:380px;margin:0 auto 18px;}
+.success-meta{font-size:12px;color:#64748b;}
+
+.fineprint{padding:16px 20px 12px;max-width:680px;margin:0 auto;font-size:10.5px;color:#475569;line-height:1.6;text-align:center;}
+.fineprint strong{color:#64748b;font-weight:600;}
+
+.footer-strip{padding:16px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.05);margin-top:auto;}
+.footer-strip img{height:30px;width:auto;opacity:0.55;margin-bottom:6px;}
+.footer-text{font-size:11px;color:#64748b;line-height:1.5;}
+
+@supports(padding:max(0px)){
+  .topbar{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));}
+  .footer-strip{padding-bottom:max(16px,env(safe-area-inset-bottom));}
+}
+
+.hidden{display:none !important;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <a href="/" style="display:block;">
+      <img src="/assets/bma-logo.png" alt="BioMed Advisor"/>
+    </a>
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Bio-IT World 2026
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Welcome from Boston</div>
+    <h1 class="hero-title">Better AI for <em>biomedical research.</em></h1>
+    <p class="hero-sub">Citations you can verify. Research data you control. Three ways to engage below.</p>
+  </div>
+
+  <div class="top-link-strip">
+    <a href="https://biomedadvisor.com" class="top-link-gold">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+      Visit the BiomedAdvisor.com site
+    </a>
+  </div>
+
+  <!-- THREE PATHS -->
+  <div class="path-chooser" id="path-chooser">
+    <button class="path-btn account" type="button" onclick="selectPath('account')">
+      <div class="path-icon">&#9989;</div>
+      <div class="path-info">
+        <div class="path-title">Free Account</div>
+        <div class="path-desc">Full access. No credit card. Start using it today.</div>
+      </div>
+      <svg class="path-arrow" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <button class="path-btn raffle" type="button" onclick="selectPath('raffle')">
+      <div class="path-icon">&#127873;</div>
+      <div class="path-info">
+        <div class="path-title">Enter the Drone Drawing</div>
+        <div class="path-desc">Two drones. 1st live at booth Thu noon. 2nd drawn Fri morning, mailed.</div>
+      </div>
+      <svg class="path-arrow" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <button class="path-btn info" type="button" onclick="selectPath('info')">
+      <div class="path-icon">&#128205;</div>
+      <div class="path-info">
+        <div class="path-title">Get More Information</div>
+        <div class="path-desc">Bio-IT follow-up &amp; MetadataHub details. Pick what interests you.</div>
+      </div>
+      <svg class="path-arrow" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- ACCOUNT FORM -->
+  <div class="form-section hidden" id="account-section">
+    <div class="form-wrap theme-account">
+      <div id="account-form-wrap">
+        <div class="form-eyebrow">FREE ACCOUNT</div>
+        <div class="form-title">Activate your free account</div>
+        <div class="form-subtitle">Full access. No credit card. Start using BioMed Advisor today.</div>
+        <form id="account-form" method="POST" autocomplete="on" novalidate>
+          <div class="form-grid">
+            <div>
+              <label class="label" for="acc_first">First Name</label>
+              <input class="input" id="acc_first" name="first_name" type="text" required autocomplete="given-name" autocapitalize="words" placeholder="Jane"/>
+            </div>
+            <div>
+              <label class="label" for="acc_last">Last Name</label>
+              <input class="input" id="acc_last" name="last_name" type="text" required autocomplete="family-name" autocapitalize="words" placeholder="Smith"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="acc_inst">Institution</label>
+              <input class="input" id="acc_inst" name="institution" type="text" required autocomplete="organization" autocapitalize="words" placeholder="University of..."/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="acc_pos">Position / Title</label>
+              <input class="input" id="acc_pos" name="position" type="text" required autocomplete="organization-title" autocapitalize="words" placeholder="Principal Investigator"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="acc_email">Email Address</label>
+              <input class="input" id="acc_email" name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" placeholder="jane@university.edu"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="acc_phone">Phone</label>
+              <input class="input" id="acc_phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+1 555 555 5555"/>
+            </div>
+          </div>
+          <input type="hidden" name="entry_type" value="account"/>
+          <input type="hidden" name="source" value="bio-it-2026-booth"/>
+          <input type="hidden" name="_subject" value="Bio-IT 2026: New Free Account signup"/>
+          <button type="submit" class="submit-btn">Activate my free Account</button>
+          <p class="consent">By submitting, you accept to be contacted by GRAU DATA.</p>
+        </form>
+        <div class="switch-path">
+          Or: <button type="button" onclick="selectPath('raffle')">enter the drone drawing</button> &middot; <button type="button" onclick="selectPath('info')">get more info</button>
+        </div>
+      </div>
+      <div id="account-success" class="success hidden">
+        <div class="success-icon">&#x2713;</div>
+        <h3 class="success-title">You&apos;re in!</h3>
+        <p class="success-body">Welcome to BioMed Advisor. Our team will be in touch shortly with your account access.</p>
+        <p class="success-meta">Want a chance at the drone? <button type="button" onclick="selectPath('raffle')" style="background:none;border:none;color:#fcd34d;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;">Enter the drawing</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RAFFLE FORM -->
+  <div class="form-section hidden" id="raffle-section">
+    <div class="form-wrap theme-raffle">
+      <div id="raffle-form-wrap">
+        <div class="form-eyebrow">DRONE DRAWING</div>
+        <div class="form-title">Enter the drone drawing</div>
+        <div class="form-subtitle">Two drones, same pool of entries. <strong style="color:#fcd34d;">1st drawn live at booth Thursday May 21 at 12:00 PM</strong> &mdash; must be present to claim. <strong style="color:#fcd34d;">2nd drawn Friday May 22 morning</strong> after show ends &mdash; mailed to winner, announced by email.</div>
+        <form id="raffle-form" method="POST" autocomplete="on" novalidate>
+          <div class="form-grid">
+            <div>
+              <label class="label" for="raf_first">First Name</label>
+              <input class="input" id="raf_first" name="first_name" type="text" required autocomplete="given-name" autocapitalize="words" placeholder="Jane"/>
+            </div>
+            <div>
+              <label class="label" for="raf_last">Last Name</label>
+              <input class="input" id="raf_last" name="last_name" type="text" required autocomplete="family-name" autocapitalize="words" placeholder="Smith"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="raf_inst">Institution</label>
+              <input class="input" id="raf_inst" name="institution" type="text" required autocomplete="organization" autocapitalize="words" placeholder="University of..."/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="raf_pos">Position / Title</label>
+              <input class="input" id="raf_pos" name="position" type="text" required autocomplete="organization-title" autocapitalize="words" placeholder="Principal Investigator"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="raf_email">Email Address</label>
+              <input class="input" id="raf_email" name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" placeholder="jane@university.edu"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="raf_phone">Phone</label>
+              <input class="input" id="raf_phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+1 555 555 5555"/>
+            </div>
+          </div>
+          <input type="hidden" name="entry_type" value="raffle"/>
+          <input type="hidden" name="source" value="bio-it-2026-booth"/>
+          <input type="hidden" name="_subject" value="Bio-IT 2026: New Drone Raffle Entry"/>
+          <button type="submit" class="submit-btn">Enter the drawing</button>
+          <p class="consent">No purchase necessary. By submitting, you accept to be contacted by GRAU DATA.</p>
+        </form>
+        <div class="switch-path">
+          Or: <button type="button" onclick="selectPath('account')">sign up for free</button> &middot; <button type="button" onclick="selectPath('info')">get more info</button>
+        </div>
+      </div>
+      <div id="raffle-success" class="success hidden">
+        <div class="success-icon">&#127873;</div>
+        <h3 class="success-title">You&apos;re entered!</h3>
+        <p class="success-body">Two chances to win &mdash; same pool of entries.<br/><br/><strong style="color:#fff;">1st drawing:</strong> Thursday May 21 at 12:00 PM at our booth (must be present to claim).<br/><br/><strong style="color:#fff;">2nd drawing:</strong> Friday May 22 morning after show ends &mdash; mailed to winner, announced by email.</p>
+        <p class="success-meta">Want full access too? <button type="button" onclick="selectPath('account')" style="background:none;border:none;color:#6ee7b7;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;">Activate a free account</button></p>
+      </div>
+      <div id="raffle-already" class="success hidden">
+        <div class="success-icon" style="background:rgba(100,116,139,0.2);box-shadow:none;color:#94a3b8;font-size:28px;">&#10003;</div>
+        <h3 class="success-title">You&apos;re already entered</h3>
+        <p class="success-body">One entry per person. Drawings: Thursday noon (live at booth) and Friday morning (mailed).</p>
+        <p class="success-meta">Want full access? <button type="button" onclick="resetRaffleBlock();selectPath('account')" style="background:none;border:none;color:#6ee7b7;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;">Activate a free account</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO FORM -->
+  <div class="form-section hidden" id="info-section">
+    <div class="form-wrap theme-info">
+      <div id="info-form-wrap">
+        <div class="form-eyebrow">MORE INFORMATION</div>
+        <div class="form-title">Tell us what interests you</div>
+        <div class="form-subtitle">We&apos;ll follow up with the materials and a conversation tailored to your interests.</div>
+        <form id="info-form" method="POST" autocomplete="on" novalidate action="https://formspree.io/f/mpqbvvak">
+          <div class="form-grid">
+            <div>
+              <label class="label" for="info_first">First Name</label>
+              <input class="input" id="info_first" name="first_name" type="text" required autocomplete="given-name" autocapitalize="words" placeholder="Jane"/>
+            </div>
+            <div>
+              <label class="label" for="info_last">Last Name</label>
+              <input class="input" id="info_last" name="last_name" type="text" required autocomplete="family-name" autocapitalize="words" placeholder="Smith"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="info_inst">Institution / Company</label>
+              <input class="input" id="info_inst" name="institution" type="text" required autocomplete="organization" autocapitalize="words" placeholder="University of..."/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="info_pos">Position / Title</label>
+              <input class="input" id="info_pos" name="position" type="text" required autocomplete="organization-title" autocapitalize="words" placeholder="Principal Investigator"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="info_email">Email Address</label>
+              <input class="input" id="info_email" name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" placeholder="jane@university.edu"/>
+            </div>
+            <div class="field-full">
+              <label class="label" for="info_phone">Phone</label>
+              <input class="input" id="info_phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+1 555 555 5555"/>
+            </div>
+            <div class="field-full">
+              <label class="label" style="margin-bottom:8px;">I&apos;m interested in &mdash; check all that apply:</label>
+              <div class="check-group">
+                <label class="check-row" id="check-bioit-row">
+                  <input type="checkbox" name="interest_bioit" value="yes" id="check_bioit"/>
+                  <span class="check-text">
+                    <span class="check-title">BioMed Advisor follow-up from Bio-IT</span>
+                    <span class="check-desc">Send me the materials we discussed and connect for a deeper conversation.</span>
+                  </span>
+                </label>
+                <label class="check-row" id="check-mdh-row">
+                  <input type="checkbox" name="interest_metadatahub" value="yes" id="check_mdh"/>
+                  <span class="check-text">
+                    <span class="check-title">MetadataHub</span>
+                    <span class="check-desc">Tell me how MetadataHub can eliminate redundant AI preprocessing and create a persistent metadata fabric.</span>
+                  </span>
+                </label>
+                <label class="check-row" id="check-atlas-row">
+                  <input type="checkbox" name="interest_atlas" value="yes" id="check_atlas"/>
+                  <span class="check-text">
+                    <span class="check-title">Atlas</span>
+                    <span class="check-desc">Show me the integrated AI solution with embedded MetadataHub.</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="field-full">
+              <label class="label" for="info_notes">Anything specific? <span style="color:#64748b;font-weight:400;">(optional)</span></label>
+              <textarea class="textarea" id="info_notes" name="notes" placeholder="A specific question, project, or context that would help us tailor the follow-up..."></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="source" value="bio-it-2026-booth"/>
+          <input type="hidden" name="_subject" value="Bio-IT 2026: More Information Request"/>
+          <button type="submit" class="submit-btn">Request information</button>
+          <p class="consent">By submitting, you accept to be contacted by GRAU DATA.</p>
+        </form>
+        <div class="switch-path">
+          Or: <button type="button" onclick="selectPath('account')">sign up for free</button> &middot; <button type="button" onclick="selectPath('raffle')">enter the drone drawing</button>
+        </div>
+      </div>
+      <div id="info-success" class="success hidden">
+        <div class="success-icon">&#x2713;</div>
+        <h3 class="success-title">Got it. Thanks.</h3>
+        <p class="success-body">We&apos;ll be in touch with the materials and a conversation tailored to what you marked.</p>
+        <p class="success-meta">Want to start using BioMed Advisor now? <button type="button" onclick="selectPath('account')" style="background:none;border:none;color:#6ee7b7;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;">Activate a free account</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fineprint">
+    <strong>Drone Giveaway Rules.</strong> No purchase necessary. Open to attendees of Bio-IT World Conference &amp; Expo 2026 (May 19&ndash;21, Boston, MA) and online visitors. Two (2) drones given away from the same pool of entries. <strong>First drawing:</strong> Thursday May 21 at 12:00 PM at the GRAU DATA booth (Eastern Time) &mdash; entries received before 12:00 PM are eligible &mdash; winner must be present at the booth to claim; if not present, a replacement name will be drawn. <strong>Second drawing:</strong> Friday May 22 morning, after the show concludes (Eastern Time) &mdash; all entries received by close of show Thursday May 21 are eligible (including those entered after the first drawing) &mdash; winner does not need to be present, will be notified by email, and drone will be mailed. The same person may not win both drones. Limit one (1) entry per person for the event. Sponsored by GRAU DATA LLC. Void where prohibited.
+  </div>
+
+  <div class="footer-strip">
+    <img src="/assets/grau-logo-white.svg" alt="GRAU DATA"/>
+    <div class="footer-text">
+      (c) 2026 GRAU DATA LLC. BioMed Advisor is a product of GRAU DATA LLC.
+    </div>
+  </div>
+
+</div>
+
+<script>
+function selectPath(which){
+  document.getElementById('path-chooser').classList.add('hidden');
+  ['account','raffle','info'].forEach(function(p){
+    document.getElementById(p + '-section').classList.add('hidden');
+  });
+  document.getElementById(which + '-section').classList.remove('hidden');
+
+  var firstFieldMap = {account:'acc_first', raffle:'raf_first', info:'info_first'};
+  setTimeout(function(){
+    var el = document.getElementById(firstFieldMap[which]);
+    if (el) el.focus();
+  }, 100);
+
+  if (which === 'raffle') checkRaffleEligibility();
+  document.getElementById(which + '-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function checkRaffleEligibility(){
+  try {
+    if (localStorage.getItem('bma_raffle_entered_bioit2026') === '1'){
+      document.getElementById('raffle-form-wrap').classList.add('hidden');
+      document.getElementById('raffle-already').classList.remove('hidden');
+    }
+  } catch(e){}
+}
+function resetRaffleBlock(){
+  document.getElementById('raffle-form-wrap').classList.remove('hidden');
+  document.getElementById('raffle-already').classList.add('hidden');
+  document.getElementById('raffle-success').classList.add('hidden');
+}
+
+// Cross-form data sharing
+var SHARED_KEY = 'bma_booth_contact_v1';
+var sharedMap = {first_name:'first', last_name:'last', institution:'inst', position:'pos', email:'email', phone:'phone'};
+function loadShared(prefix){
+  try {
+    var saved = JSON.parse(localStorage.getItem(SHARED_KEY) || '{}');
+    Object.keys(sharedMap).forEach(function(f){
+      var el = document.getElementById(prefix + '_' + sharedMap[f]);
+      if (el && saved[f] && !el.value) el.value = saved[f];
+    });
+  } catch(e){}
+}
+function saveShared(prefix){
+  try {
+    var state = JSON.parse(localStorage.getItem(SHARED_KEY) || '{}');
+    Object.keys(sharedMap).forEach(function(f){
+      var el = document.getElementById(prefix + '_' + sharedMap[f]);
+      if (el && el.value) state[f] = el.value;
+    });
+    localStorage.setItem(SHARED_KEY, JSON.stringify(state));
+  } catch(e){}
+}
+['acc','raf','info'].forEach(function(prefix){
+  loadShared(prefix);
+  Object.keys(sharedMap).forEach(function(f){
+    var el = document.getElementById(prefix + '_' + sharedMap[f]);
+    if (el) el.addEventListener('input', function(){ saveShared(prefix); });
+  });
+});
+
+// Checkbox visual feedback
+[
+  ['check_bioit', 'check-bioit-row'],
+  ['check_mdh', 'check-mdh-row'],
+  ['check_atlas', 'check-atlas-row']
+].forEach(function(pair){
+  var cb = document.getElementById(pair[0]);
+  var row = document.getElementById(pair[1]);
+  if (cb && row){
+    cb.addEventListener('change', function(){
+      if (cb.checked) row.classList.add('is-checked');
+      else row.classList.remove('is-checked');
+    });
+  }
+});
+
+function wireForm(formId, successId, wrapId, formspreeEndpoint){
+  var form = document.getElementById(formId);
+  if (!form) return;
+  if (formspreeEndpoint) form.action = formspreeEndpoint;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = this.querySelector('button[type=submit]');
+    var originalText = btn.textContent;
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    try {
+      var res = await fetch(this.action, {
+        method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}
+      });
+      if (res.ok){
+        document.getElementById(wrapId).classList.add('hidden');
+        document.getElementById(successId).classList.remove('hidden');
+        if (formId === 'raffle-form'){
+          try { localStorage.setItem('bma_raffle_entered_bioit2026', '1'); } catch(e){}
+        }
+        document.getElementById(successId).scrollIntoView({behavior:'smooth',block:'center'});
+      } else {
+        btn.textContent = 'Error \u2014 try again';
+        btn.disabled = false;
+        setTimeout(function(){ btn.textContent = originalText; }, 3000);
+      }
+    } catch(err){
+      btn.textContent = 'Error \u2014 try again';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent = originalText; }, 3000);
+    }
+  });
+}
+
+wireForm('account-form', 'account-success', 'account-form-wrap', 'https://formspree.io/f/xojronob');
+wireForm('raffle-form', 'raffle-success', 'raffle-form-wrap', 'https://formspree.io/f/xojronob');
+wireForm('info-form', 'info-success', 'info-form-wrap', 'https://formspree.io/f/mpqbvvak');
+</script>
+
+</body>
+</html>

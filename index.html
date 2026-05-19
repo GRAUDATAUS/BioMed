@@ -634,7 +634,33 @@ function wireForm(formId, successId){
 }
 wireForm('account-form', 'account-success');
 wireForm('contact-form', 'contact-success');
-wireForm('whitepaper-form', 'whitepaper-success');
+
+// Whitepaper form: redirect to PDF on success
+document.getElementById('whitepaper-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var btn = this.querySelector('button[type=submit]');
+  var originalText = btn.textContent;
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  try {
+    var res = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: {'Accept':'application/json'}
+    });
+    if(res.ok){
+      window.location.href = 'https://biomedadvisor.com/assets/Research-Grade%20AI_%20BioMed_Advisor_White_Paper.pdf';
+    } else {
+      btn.textContent = 'Error — please try again';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent = originalText; }, 3000);
+    }
+  } catch(err){
+    btn.textContent = 'Error — please try again';
+    btn.disabled = false;
+    setTimeout(function(){ btn.textContent = originalText; }, 3000);
+  }
+});
 </script>
 
 </body>

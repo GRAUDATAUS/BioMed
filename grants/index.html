@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Win More Grants with Better AI — BioMed Advisor</title>
+<title>Win More Grants with Better AI - BioMed Advisor</title>
 <meta name="description" content="Verifiable citations. Agency-aligned proposals. Institutional-grade IP protection. The only AI built exclusively for biomedical grant success. A product of GRAU DATA LLC."/>
-<meta property="og:title" content="Win More Grants with Better AI — BioMed Advisor"/>
+<meta property="og:title" content="Win More Grants with Better AI - BioMed Advisor"/>
 <meta property="og:description" content="The only AI built exclusively for biomedical grant success."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://biomedadvisor.com/grants"/>
@@ -50,6 +50,25 @@ body{overflow-x:hidden;background:white;}
 .mobile-menu.open{display:flex;}
 @media(max-width:767px){.desktop-nav{display:none;}.mobile-toggle{display:flex;}}
 @media(min-width:768px){.mobile-toggle{display:none;}}
+
+/* FORM INPUT FIX: ensure dark text on white background in modals */
+#account-modal input,
+#account-modal textarea,
+#contact-modal input,
+#contact-modal textarea,
+#whitepaper-modal input,
+#whitepaper-modal textarea{
+  color:#0f172a;
+  background:#fff;
+}
+#account-modal input::placeholder,
+#account-modal textarea::placeholder,
+#contact-modal input::placeholder,
+#contact-modal textarea::placeholder,
+#whitepaper-modal input::placeholder,
+#whitepaper-modal textarea::placeholder{
+  color:#9ca3af;
+}
 </style>
 </head>
 <body>
@@ -63,6 +82,7 @@ body{overflow-x:hidden;background:white;}
     <div class="desktop-nav hidden md:flex items-center gap-7">
       <a href="/grants" class="nav-link text-sm font-semibold text-white no-underline">Grants</a>
       <a href="/data-sovereignty" class="nav-link text-sm font-medium text-white/70 no-underline">Data Sovereignty</a>
+      <a href="#" onclick="openWhitePaperModal();return false;" class="nav-link text-sm font-medium text-white/70 no-underline">White Paper</a>
       <button onclick="openAccountModal()" class="text-sm font-semibold text-white px-5 py-2 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
     </div>
     <button class="mobile-toggle md:hidden text-white" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -72,6 +92,7 @@ body{overflow-x:hidden;background:white;}
   <div id="mobile-menu" class="mobile-menu md:hidden flex-col gap-1 px-6 pb-4" style="background:rgba(10,13,26,0.98);">
     <a href="/grants" class="text-base font-semibold text-white py-3 no-underline border-b border-white/5">Grants</a>
     <a href="/data-sovereignty" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5">Data Sovereignty</a>
+    <a href="#" onclick="openWhitePaperModal();return false;" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5">White Paper</a>
     <button onclick="openAccountModal()" class="mt-3 text-sm font-semibold text-white px-5 py-3 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
   </div>
 </nav>
@@ -778,6 +799,56 @@ body{overflow-x:hidden;background:white;}
   </div>
 </div>
 
+<!-- WHITE PAPER MODAL -->
+<div id="whitepaper-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;background:rgba(10,25,41,0.85);padding:20px;backdrop-filter:blur(4px);" onclick="if(event.target===this)closeWhitePaperModal();">
+  <div style="background:#fff;border-radius:16px;padding:44px 44px 36px;max-width:540px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.4);max-height:92vh;overflow-y:auto;">
+    <button onclick="closeWhitePaperModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1;padding:4px;" aria-label="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:20px;font-weight:700;">BmA</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#0f172a;margin:0 0 8px;font-weight:400;">Download the White Paper</h3>
+      <p style="font-size:14px;color:#6b7280;margin:0;">Research-grade AI: BioMed Advisor. Tell us about you and the PDF will open in a new tab.</p>
+    </div>
+    <form id="whitepaper-form" action="https://formspree.io/f/xojronob" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">First Name *</label>
+          <input name="first_name" required placeholder="Jane" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Last Name *</label>
+          <input name="last_name" required placeholder="Smith" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Institution *</label>
+        <input name="institution" required placeholder="University of..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Position / Title *</label>
+        <input name="position" required placeholder="Principal Investigator, Researcher..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Email Address *</label>
+        <input name="email" type="email" required placeholder="jane@university.edu" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Phone</label>
+        <input name="phone" type="tel" placeholder="+1 555 555 5555" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#8b5cf6'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <input type="hidden" name="source" value="grants-whitepaper-download"/>
+      <input type="hidden" name="_subject" value="White Paper Download - BioMed Advisor"/>
+      <button type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:white;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(139,92,246,0.4);margin-top:4px;">Download White Paper</button>
+      <p style="text-align:center;font-size:12px;color:#9ca3af;margin:4px 0 0;line-height:1.5;">By submitting, you accept to be contacted by GRAU DATA.</p>
+    </form>
+    <div id="whitepaper-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">&#x1F4C4;</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#0f172a;margin:0 0 8px;font-weight:400;">Thank you!</h3>
+      <p style="color:#6b7280;font-size:15px;margin-bottom:16px;">Your download is opening in a new tab. If it doesn't open automatically, click below.</p>
+      <a id="whitepaper-fallback-link" href="/assets/Research-Grade%20AI_%20BioMed_Advisor_White_Paper.pdf" target="_blank" rel="noopener" style="display:inline-block;background:#8b5cf6;color:#fff;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;">Open the White Paper</a>
+    </div>
+  </div>
+</div>
+
 <script>
 // Scroll reveal
 var observer = new IntersectionObserver(function(entries){
@@ -841,8 +912,17 @@ function closeContactModal(){
   document.getElementById('contact-modal').style.display='none';
   document.body.style.overflow='';
 }
+function openWhitePaperModal(){
+  document.getElementById('whitepaper-modal').style.display='flex';
+  document.body.style.overflow='hidden';
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function closeWhitePaperModal(){
+  document.getElementById('whitepaper-modal').style.display='none';
+  document.body.style.overflow='';
+}
 document.addEventListener('keydown', function(e){
-  if(e.key==='Escape'){ closeAccountModal(); closeContactModal(); }
+  if(e.key==='Escape'){ closeAccountModal(); closeContactModal(); closeWhitePaperModal(); }
 });
 
 // Formspree submit handlers
@@ -865,12 +945,12 @@ function wireForm(formId, successId){
         this.style.display = 'none';
         document.getElementById(successId).style.display = 'block';
       } else {
-        btn.textContent = 'Error — please try again';
+        btn.textContent = 'Error - please try again';
         btn.disabled = false;
         setTimeout(function(){ btn.textContent = originalText; }, 3000);
       }
     } catch(err){
-      btn.textContent = 'Error — please try again';
+      btn.textContent = 'Error - please try again';
       btn.disabled = false;
       setTimeout(function(){ btn.textContent = originalText; }, 3000);
     }
@@ -878,6 +958,40 @@ function wireForm(formId, successId){
 }
 wireForm('account-form', 'account-success');
 wireForm('contact-form', 'contact-success');
+
+// White paper form: same flow as wireForm, but also opens the PDF on success
+(function(){
+  var form = document.getElementById('whitepaper-form');
+  if(!form) return;
+  var pdfUrl = '/assets/Research-Grade%20AI_%20BioMed_Advisor_White_Paper.pdf';
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = this.querySelector('button[type=submit]');
+    var originalText = btn.textContent;
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    try {
+      var res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {'Accept':'application/json'}
+      });
+      if(res.ok){
+        this.style.display = 'none';
+        document.getElementById('whitepaper-success').style.display = 'block';
+        window.open(pdfUrl, '_blank', 'noopener');
+      } else {
+        btn.textContent = 'Error - please try again';
+        btn.disabled = false;
+        setTimeout(function(){ btn.textContent = originalText; }, 3000);
+      }
+    } catch(err){
+      btn.textContent = 'Error - please try again';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent = originalText; }, 3000);
+    }
+  });
+})();
 </script>
 
 </body>

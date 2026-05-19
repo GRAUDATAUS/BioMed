@@ -57,6 +57,10 @@ body{overflow-x:hidden;background:white;}
     <div class="desktop-nav hidden md:flex items-center gap-7">
       <a href="/grants" class="nav-link text-sm font-medium text-white/70 no-underline">Grants</a>
       <a href="/data-sovereignty" class="nav-link text-sm font-medium text-white/70 no-underline">Data Sovereignty</a>
+      <button onclick="openWhitepaperModal()" class="nav-link text-sm font-medium text-white/70 inline-flex items-center gap-1.5" style="background:none;border:none;cursor:pointer;padding:0;">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:inline-block;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        White Paper
+      </button>
       <button onclick="openAccountModal()" class="text-sm font-semibold text-white px-5 py-2 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
     </div>
 
@@ -70,6 +74,7 @@ body{overflow-x:hidden;background:white;}
   <div id="mobile-menu" class="mobile-menu md:hidden flex-col gap-1 px-6 pb-4" style="background:rgba(10,13,26,0.98);">
     <a href="/grants" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5">Grants</a>
     <a href="/data-sovereignty" class="text-base font-medium text-white/80 py-3 no-underline border-b border-white/5">Data Sovereignty</a>
+    <button onclick="openWhitepaperModal()" class="text-base font-medium text-white/80 py-3 border-b border-white/5 text-left" style="background:none;border-left:none;border-right:none;border-top:none;cursor:pointer;">White Paper</button>
     <button onclick="openAccountModal()" class="mt-3 text-sm font-semibold text-white px-5 py-3 rounded-lg" style="background:#10b981;border:none;cursor:pointer;">Get a free Account</button>
   </div>
 </nav>
@@ -378,6 +383,7 @@ body{overflow-x:hidden;background:white;}
         <div style="font-size:14px;line-height:1.6;">Research-grade AI for biomedical science</div>
       </div>
       <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
+        <a href="#" onclick="openWhitepaperModal();return false;" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;">White Paper</a>
         <a href="#" onclick="openContactModal();return false;" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;">Contact Us</a>
         <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;">Schedule a Briefing</a>
         <a href="/about.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:500;">About GRAU DATA</a>
@@ -477,6 +483,58 @@ body{overflow-x:hidden;background:white;}
   </div>
 </div>
 
+<!-- WHITEPAPER MODAL -->
+<div id="whitepaper-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;background:rgba(10,25,41,0.85);padding:20px;backdrop-filter:blur(4px);" onclick="if(event.target===this)closeWhitepaperModal();">
+  <div style="background:#fff;border-radius:16px;padding:44px 44px 36px;max-width:540px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.4);max-height:92vh;overflow-y:auto;">
+    <button onclick="closeWhitepaperModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1;padding:4px;" aria-label="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;">
+        <svg style="width:28px;height:28px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:26px;color:#0f172a;margin:0 0 8px;font-weight:400;">Download the White Paper</h3>
+      <p style="font-size:14px;color:#6b7280;margin:0;">We&apos;ll send the download link straight to your inbox.</p>
+    </div>
+    <form id="whitepaper-form" action="https://formspree.io/f/mojbvnqz" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">First Name *</label>
+          <input name="first_name" required placeholder="Jane" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Last Name *</label>
+          <input name="last_name" required placeholder="Smith" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Institution *</label>
+        <input name="institution" required placeholder="University of..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Position / Title *</label>
+        <input name="position" required placeholder="Principal Investigator, Researcher..." style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Email Address *</label>
+        <input name="email" type="email" required placeholder="jane@university.edu" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:6px;">Phone *</label>
+        <input name="phone" type="tel" required placeholder="+1 555 555 5555" style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#7c3aed'" onblur="this.style.borderColor='#e5e7eb'"/>
+      </div>
+      <input type="hidden" name="source" value="home-whitepaper"/>
+      <input type="hidden" name="asset" value="BmA White Paper"/>
+      <button type="submit" style="width:100%;padding:15px;background:linear-gradient(135deg,#7c3aed,#5b21b6);color:white;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(124,58,237,0.4);margin-top:4px;">Email Me the White Paper &rarr;</button>
+      <p style="text-align:center;font-size:12px;color:#9ca3af;margin:4px 0 0;line-height:1.5;">By submitting, you accept to be contacted by GRAU DATA.</p>
+    </form>
+    <div id="whitepaper-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">&#x1F4E7;</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:#0f172a;margin:0 0 12px;font-weight:400;">Check your inbox.</h3>
+      <p style="color:#6b7280;font-size:15px;margin-bottom:20px;line-height:1.5;">We&apos;ve emailed you a link to download the BioMed Advisor white paper. If you don&apos;t see it in a few minutes, check your spam folder.</p>
+      <a id="whitepaper-direct-link" href="/assets/Research-Grade%20AI_%20BioMed_Advisor_White_Paper.pdf" target="_blank" rel="noopener" style="display:inline-block;padding:12px 24px;background:#7c3aed;color:white;font-size:14px;font-weight:600;border-radius:10px;text-decoration:none;">Or download directly &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <script>
 // Scroll reveal
 var observer = new IntersectionObserver(function(entries){
@@ -524,12 +582,22 @@ function closeContactModal(){
   document.getElementById('contact-modal').style.display='none';
   document.body.style.overflow='';
 }
+function openWhitepaperModal(){
+  document.getElementById('whitepaper-modal').style.display='flex';
+  document.body.style.overflow='hidden';
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function closeWhitepaperModal(){
+  document.getElementById('whitepaper-modal').style.display='none';
+  document.body.style.overflow='';
+}
 
 // Close modals on Escape
 document.addEventListener('keydown', function(e){
   if(e.key==='Escape'){
     closeAccountModal();
     closeContactModal();
+    closeWhitepaperModal();
   }
 });
 
@@ -566,6 +634,7 @@ function wireForm(formId, successId){
 }
 wireForm('account-form', 'account-success');
 wireForm('contact-form', 'contact-success');
+wireForm('whitepaper-form', 'whitepaper-success');
 </script>
 
 </body>

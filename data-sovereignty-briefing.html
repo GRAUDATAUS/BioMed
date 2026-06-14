@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>When the Model You Licensed Changes Underneath You — BioMed Advisor</title>
+<meta name="description" content="When you license a frontier model, the vendor controls retention, routing, and the terms themselves. BioMed Advisor makes data sovereignty a property of the architecture, not a clause in a contract.">
+<meta property="og:title" content="When the Model You Licensed Changes Underneath You — BioMed Advisor">
+<meta property="og:description" content="Better AI. Not more AI. Private. Verifiable. Data Sovereign.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://biomedadvisor.com/data-sovereignty-briefing">
+<link rel="icon" href="https://biomedadvisor.com/assets/bma-logo.png">
+<style>
+  :root{
+    --navy:#0a0f1a;
+    --navy2:#11203a;
+    --blue:#1d6fe0;
+    --blue-light:#64b5f6;
+    --ink:#0f1722;
+    --slate:#475569;
+    --line:#e2e8f0;
+    --bg:#ffffff;
+    --bg-soft:#f6f8fb;
+    --bg-tint:#eef4fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:780px;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav img{height:30px;width:auto;display:block;}
+  .nav .links{display:flex;gap:28px;align-items:center;}
+  .nav .links a{color:var(--slate);font-size:15px;font-weight:500;}
+  .nav .cta{
+    background:var(--blue);color:#fff;padding:9px 18px;border-radius:8px;
+    font-weight:600;font-size:14px;
+  }
+  .nav .cta:hover{background:#1559b8;text-decoration:none;}
+  @media(max-width:680px){ .nav .links a.hide-sm{display:none;} }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+    color:#fff;padding:72px 0 64px;
+  }
+  .kicker{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--blue-light);margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-0.02em;
+    margin-bottom:20px;max-width:18ch;
+  }
+  .hero p.lede{font-size:19px;color:rgba(255,255,255,0.78);max-width:60ch;margin-bottom:14px;}
+  .pillars{font-size:14px;font-weight:600;letter-spacing:0.08em;color:var(--blue-light);
+    text-transform:uppercase;margin-top:26px;}
+  @media(max-width:680px){ .hero h1{font-size:31px;} .hero{padding:52px 0 44px;} }
+
+  /* Sections */
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--blue);margin-bottom:12px;}
+  h2{font-size:29px;line-height:1.18;font-weight:800;letter-spacing:-0.01em;margin-bottom:18px;}
+  h3{font-size:20px;font-weight:700;margin:0 0 6px;}
+  p{margin-bottom:16px;color:#1f2a37;}
+  .lead{font-size:18px;color:var(--slate);}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--bg-soft);border-left:4px solid var(--blue);
+    padding:22px 24px;border-radius:0 10px 10px 0;margin:8px 0 4px;
+  }
+  .callout p:last-child{margin-bottom:0;}
+
+  ul.clean{list-style:none;margin:8px 0 0;}
+  ul.clean li{position:relative;padding-left:26px;margin-bottom:16px;color:#1f2a37;}
+  ul.clean li:before{
+    content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+    background:var(--blue);border-radius:2px;transform:rotate(45deg);
+  }
+  ul.clean li b{color:var(--ink);}
+
+  /* Card grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:10px;}
+  @media(max-width:780px){ .grid{grid-template-columns:1fr;} }
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;
+  }
+  .card .num{font-size:12px;font-weight:700;letter-spacing:0.1em;color:var(--blue);margin-bottom:10px;}
+
+  /* Table */
+  .tablewrap{overflow-x:auto;margin-top:8px;}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px;}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{background:var(--navy);color:#fff;font-weight:600;font-size:14px;}
+  thead th:first-child{border-radius:10px 0 0 0;}
+  thead th:last-child{border-radius:0 10px 0 0;}
+  td.feat{font-weight:600;color:var(--ink);background:var(--bg-soft);width:24%;}
+  td.bma{background:var(--bg-tint);}
+  tbody tr:last-child td{border-bottom:none;}
+
+  /* CTA band */
+  .ctaband{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;text-align:center;}
+  .ctaband h2{color:#fff;}
+  .ctaband p{color:rgba(255,255,255,0.78);max-width:54ch;margin:0 auto 26px;}
+  .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:var(--blue);color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:16px;}
+  .btn-primary:hover{background:#1559b8;text-decoration:none;}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);
+    padding:14px 28px;border-radius:10px;font-weight:600;font-size:16px;}
+  .btn-ghost:hover{border-color:#fff;text-decoration:none;}
+
+  .note{font-size:13px;color:var(--slate);margin-top:30px;}
+  .note a{color:var(--blue);}
+
+  /* CTA form */
+  .cta-form{max-width:560px;margin:6px auto 0;text-align:left;}
+  .cta-form .frow{display:flex;gap:12px;margin-bottom:12px;}
+  .cta-form .frow input{flex:1;min-width:0;}
+  .cta-form input{
+    width:100%;padding:13px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.07);color:#fff;font-size:15px;font-family:inherit;
+  }
+  .cta-form input::placeholder{color:rgba(255,255,255,0.55);}
+  .cta-form input:focus{outline:none;border-color:var(--blue-light);background:rgba(255,255,255,0.12);}
+  .cta-submit{width:100%;border:none;cursor:pointer;margin-top:4px;font-size:17px;padding:15px;}
+  .cta-submit:disabled{opacity:0.6;cursor:default;}
+  .fnote{font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-top:12px;}
+  @media(max-width:560px){ .cta-form .frow{flex-direction:column;gap:12px;} }
+  .cta-thanks{max-width:560px;margin:0 auto;background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:32px;text-align:center;}
+  .cta-thanks .check{width:48px;height:48px;line-height:48px;border-radius:50%;
+    background:var(--blue);color:#fff;font-size:24px;margin:0 auto 16px;}
+  .alt-cta{font-size:15px;color:rgba(255,255,255,0.65);margin-top:24px;text-align:center;}
+  .alt-cta a{color:var(--blue-light);font-weight:600;}
+
+  /* Footer */
+  footer.site{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0;}
+  footer .top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;margin-bottom:32px;}
+  footer img{height:26px;margin-bottom:10px;}
+  footer .desc{font-size:14px;line-height:1.6;}
+  footer .flinks{display:flex;gap:28px;flex-wrap:wrap;align-items:center;}
+  footer .flinks a{color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;}
+  footer .bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="https://biomedadvisor.com/"><img src="https://biomedadvisor.com/assets/bma-logo.png" alt="BioMed Advisor"></a>
+    <div class="links">
+      <a class="hide-sm" href="https://biomedadvisor.com/grants">Grants</a>
+      <a class="hide-sm" href="https://biomedadvisor.com/data-sovereignty">Data Sovereignty</a>
+      <a class="cta" href="#get-started">Get a free Account</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">A Data Sovereignty Briefing</span>
+    <h1>When the model you licensed changes underneath you.</h1>
+    <p class="lede">Every few months, an AI provider quietly changes what happens to your data, which model answers your question, or what the license permits. You signed for one thing. You are now using another. For biomedical research, that is not a tolerable risk.</p>
+    <p class="lede">BioMed Advisor was built so those changes cannot reach your research in the first place.</p>
+    <div class="pillars">Private&nbsp;&nbsp;/&nbsp;&nbsp;Verifiable&nbsp;&nbsp;/&nbsp;&nbsp;Data Sovereign</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap narrow">
+    <div class="eyebrow">The Pattern</div>
+    <h2>This is not a one-time problem. It is how the model layer works.</h2>
+    <p class="lead">When you send research to a frontier model, you do not control what happens next. The vendor does. And the vendor changes the rules on its own schedule, for its own reasons, often disclosed only in documents few people read.</p>
+    <ul class="clean">
+      <li><b>Retention policies change.</b> Data you were told would not be kept becomes data that is kept for a fixed window, with limited recourse.</li>
+      <li><b>Routing changes.</b> The model you selected can be swapped for another based on what your prompt or workspace contains, with security and biology content among the triggers.</li>
+      <li><b>Capabilities change.</b> A model can be tuned to give weaker answers on certain topics, sometimes without a clear notice to the user.</li>
+      <li><b>The license itself changes.</b> End-user terms are revised unilaterally. A new model class can ship outside the scope of the protections you negotiated. Your practical choice is to accept the new terms or stop using the product.</li>
+    </ul>
+    <div class="callout" style="margin-top:24px;">
+      <p>None of this requires bad faith on the vendor's part. It is the structural reality of renting access to someone else's model: <strong>they hold the controls, and the controls move.</strong> The most recent release simply makes the pattern impossible to ignore.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-soft);">
+  <div class="wrap narrow">
+    <div class="eyebrow">The Live Example</div>
+    <h2>June 2026: Anthropic's Mythos-class release.</h2>
+    <p class="lead">The clearest illustration arrived with Anthropic's new Mythos-class models, including Claude Fable 5. In a matter of days, it demonstrated every part of the pattern at once.</p>
+    <ul class="clean">
+      <li><b>Mandatory retention that cannot be turned off.</b> These models carry a 30-day retention window for prompts and outputs, and it applies even to organizations that previously operated under Zero Data Retention agreements. ZDR does not extend to this model class.</li>
+      <li><b>Content-based rerouting.</b> Requests flagged by safety classifiers for cybersecurity or biology content are re-run on a different model. The flag can fire on benign material, and even on a workspace's existing files before the user types anything unusual.</li>
+      <li><b>Disclosed capability limits.</b> A passage in the model's system card described responses being quietly degraded for certain advanced work. The disclosure drew immediate criticism, and the provider walked the behavior back.</li>
+      <li><b>The market reacted within a day.</b> At least one major enterprise restricted internal use while its legal teams reviewed the retention implications.</li>
+    </ul>
+    <div class="callout" style="margin-top:24px;">
+      <p>For a research institution, two words in that list are decisive: <strong>biology content</strong>. The exact subject matter of biomedical science is a documented trigger for routing decisions you do not control and were not consulted on. And whatever was negotiated in a prior agreement did not prevent any of it.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="eyebrow">The Real Issue</div>
+    <h2>The problem is control, not any single policy.</h2>
+    <p class="lead">Retention, routing, and capability limits are symptoms. The underlying condition is that control sits with the vendor. A protection that depends on a vendor's current policy is only as durable as the vendor's next decision.</p>
+    <p>That is why the answer cannot be a better contract or a stronger assurance. Assurances can be revised. The only durable form of data sovereignty is one that does not depend on what the vendor does next, because the sensitive data never leaves your control in identifiable form to begin with.</p>
+    <p style="font-size:20px;font-weight:700;color:var(--ink);margin-top:8px;">Sovereignty has to be a property of the architecture, not a clause in a contract.</p>
+  </div>
+</section>
+
+<section style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="narrow" style="margin:0 auto;">
+      <div class="eyebrow">How BioMed Advisor Answers It</div>
+      <h2>Privacy is not a promise. It is the architecture.</h2>
+      <p class="lead">BioMed Advisor sits between your researchers and the AI as a sovereignty-preserving proxy. It does not depend on any single model's retention or routing policy, because it never sends identifiable research to the model in the first place.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01 / PROXY</div>
+        <h3>No direct line to the AI company</h3>
+        <p style="margin-bottom:0;">Researchers sign in to BioMed Advisor, never to the model provider. Every request reaches the model from BioMed Advisor infrastructure, with no record tying it back to your team or institution.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 / MASKING</div>
+        <h3>Nothing identifying to retain</h3>
+        <p style="margin-bottom:0;">Identifying and sensitive elements are masked before any prompt leaves. A 30-day retention window at the model layer captures nothing that can be traced to your patients, compounds, or institution.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 / FRAGMENTATION</div>
+        <h3>No provider sees the whole picture</h3>
+        <p style="margin-bottom:0;">Questions are routed to the model best suited to each task, so no single vendor accumulates enough of your activity to profile your research, and masked input gives content classifiers little to act on.</p>
+      </div>
+      <div class="card">
+        <div class="num">04 / NO STORAGE</div>
+        <h3>No central archive of your work</h3>
+        <p style="margin-bottom:0;">There is no server-side database of your conversations to breach, subpoena, or retain. Nothing accumulates over time that could reconstruct a line of inquiry.</p>
+      </div>
+      <div class="card">
+        <div class="num">05 / NO MEMORY</div>
+        <h3>Nothing persists about the user</h3>
+        <p style="margin-bottom:0;">The platform holds no persistent memory of users or sessions, so there is nothing to re-identify a researcher across time or devices.</p>
+      </div>
+      <div class="card">
+        <div class="num">06 / SOVEREIGN HOSTING</div>
+        <h3>Your region, your law</h3>
+        <p style="margin-bottom:0;">Deploy as a private cloud in your jurisdiction, or on premises in your own data center. Your data stays there, governed by the law that governs your institution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Side by Side</div>
+    <h2>Renting a model versus owning the architecture.</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Concern</th><th>Direct use of a frontier model</th><th>BioMed Advisor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="feat">Data retention</td><td>Set by the vendor; can change with a new model class</td><td class="bma">Nothing identifiable is sent, so nothing relevant is retained</td></tr>
+          <tr><td class="feat">Which model answers</td><td>Can be rerouted on security or biology content</td><td class="bma">Masked input gives classifiers little to flag</td></tr>
+          <tr><td class="feat">Capability</td><td>Can be quietly limited on certain topics</td><td class="bma">Multi-model orchestration chosen for task quality</td></tr>
+          <tr><td class="feat">Who sets the terms</td><td>Vendor; the license can change unilaterally</td><td class="bma">You; sovereignty is built into the architecture</td></tr>
+          <tr><td class="feat">Stored history</td><td>Provider servers, tied to your account</td><td class="bma">No central archive; nothing to trace</td></tr>
+          <tr><td class="feat">Jurisdiction</td><td>Often unclear</td><td class="bma">Your region or your data center, your local law</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Public behaviors referenced above are drawn from the model provider's own documentation and system card, and from widely reported coverage of the June 2026 release. They are described to illustrate the structural risk of vendor-controlled access, not to assert any breach of contract.</p>
+  </div>
+</section>
+
+<section class="ctaband" id="get-started">
+  <div class="wrap narrow">
+    <h2>See how data sovereignty should work.</h2>
+    <p>Stop renting access on someone else's terms. Run BioMed Advisor on your own research and watch the architecture do what a contract never could. Free account, no credit card.</p>
+
+    <div id="bma-form" class="cta-form">
+      <div class="frow">
+        <input type="text" id="f-first" placeholder="First name" required>
+        <input type="text" id="f-last" placeholder="Last name" required>
+      </div>
+      <div class="frow">
+        <input type="text" id="f-inst" placeholder="Institution" required>
+        <input type="text" id="f-title" placeholder="Position / title">
+      </div>
+      <div class="frow">
+        <input type="email" id="f-email" placeholder="Work email" required>
+        <input type="tel" id="f-phone" placeholder="Phone">
+      </div>
+      <button type="button" class="btn-primary cta-submit" id="f-submit">Get Your Free Account Now</button>
+      <div class="fnote">By submitting, you accept to be contacted by GRAU DATA. No credit card required.</div>
+    </div>
+
+    <div id="bma-thanks" class="cta-thanks" style="display:none;">
+      <div class="check">&#10003;</div>
+      <h3 style="color:#fff;font-size:24px;margin-bottom:8px;">You're in.</h3>
+      <p style="margin-bottom:0;">A member of the GRAU DATA team will contact you shortly to get you started. Welcome to BioMed Advisor.</p>
+    </div>
+
+    <div class="alt-cta">
+      Prefer a walkthrough first? <a href="https://tidycal.com/graudata/30-minute-meeting-1dleel9">Schedule a briefing</a>.
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <img src="https://biomedadvisor.com/assets/grau-logo-white.svg" alt="GRAU DATA">
+        <div class="desc">Research-grade AI for biomedical science</div>
+      </div>
+      <div class="flinks">
+        <a href="https://us.graudata.com/about-us">About GRAU DATA</a>
+        <a href="https://us.graudata.com/privacy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>(c) 2026 GRAU DATA LLC. All rights reserved.</span>
+      <span>BioMed Advisor is a product of GRAU DATA LLC, an authorized reseller of GRAU DATA GmbH.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('f-submit');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var first = document.getElementById('f-first').value.trim();
+    var last  = document.getElementById('f-last').value.trim();
+    var inst  = document.getElementById('f-inst').value.trim();
+    var title = document.getElementById('f-title').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var phone = document.getElementById('f-phone').value.trim();
+    if(!first || !last || !inst || !email){
+      alert('Please fill in first name, last name, institution, and email.');
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    fetch('https://formspree.io/f/mojnopqw', {
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify({
+        _subject:'Free Account request - Data Sovereignty Briefing',
+        source:'data-sovereignty-briefing',
+        firstName:first, lastName:last, institution:inst,
+        title:title, email:email, phone:phone
+      })
+    }).then(function(r){
+      if(r.ok){
+        document.getElementById('bma-form').style.display='none';
+        document.getElementById('bma-thanks').style.display='block';
+      } else {
+        btn.disabled=false; btn.textContent='Get Your Free Account Now';
+        alert('Something went wrong. Please try again or schedule a briefing.');
+      }
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='Get Your Free Account Now';
+      alert('Something went wrong. Please try again or schedule a briefing.');
+    });
+  });
+})();
+</script>
+</body>
+</html>
